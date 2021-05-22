@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="https://Buildccy.github.io">
   <title>我的第二篇博文 | Buildccy的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="性能优化 串讲（转）问题列表初始阶段 -&gt; 加载优化  首页加载慢的优化 优化图片的做法 实现 Webpack 打包优化 实现 CDN 加速  运行阶段 -&gt; 渲染优化  渲染十万条数据如何不造成卡顿  学习目标  理解前端优化中两个分类  了解导致前端性能问题的根本原因  知道一些常用的性能问题的解决方案  问题详解初始阶段1. 首页加载慢的优化#####问题分析  首页加载图片过多">
+  <meta name="description" content="性能优化 串讲（转）问题列表初始阶段 -&gt; 加载优化  首页加载慢的优化 优化图片的做法 实现 Webpack 打包优化 实现 CDN 加速  运行阶段 -&gt; 渲染优化  渲染十万条数据如何不造成卡顿  学习目标  理解前端优化中两个分类  了解导致前端性能问题的根本原因  知道一些常用的性能问题的解决方案">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我的第二篇博文">
 <meta property="og:url" content="https://buildccy.github.io/2021/04/20/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E5%8D%9A%E6%96%87/index.html">
 <meta property="og:site_name" content="Buildccy的个人博客">
-<meta property="og:description" content="性能优化 串讲（转）问题列表初始阶段 -&gt; 加载优化  首页加载慢的优化 优化图片的做法 实现 Webpack 打包优化 实现 CDN 加速  运行阶段 -&gt; 渲染优化  渲染十万条数据如何不造成卡顿  学习目标  理解前端优化中两个分类  了解导致前端性能问题的根本原因  知道一些常用的性能问题的解决方案  问题详解初始阶段1. 首页加载慢的优化#####问题分析  首页加载图片过多">
+<meta property="og:description" content="性能优化 串讲（转）问题列表初始阶段 -&gt; 加载优化  首页加载慢的优化 优化图片的做法 实现 Webpack 打包优化 实现 CDN 加速  运行阶段 -&gt; 渲染优化  渲染十万条数据如何不造成卡顿  学习目标  理解前端优化中两个分类  了解导致前端性能问题的根本原因  知道一些常用的性能问题的解决方案">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://buildccy.github.io/2021/04/20/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E5%8D%9A%E6%96%87/assets/1.png">
 <meta property="og:image" content="https://buildccy.github.io/2021/04/20/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E5%8D%9A%E6%96%87/assets/2.jpg">
@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://buildccy.github.io/2021/04/20/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E5%8D%9A%E6%96%87/assets/4.jpeg">
 <meta property="og:image" content="https://buildccy.github.io/2021/04/20/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E5%8D%9A%E6%96%87/assets/5.jpg">
 <meta property="article:published_time" content="2021-04-20T12:46:29.000Z">
-<meta property="article:modified_time" content="2021-04-22T07:29:31.761Z">
+<meta property="article:modified_time" content="2021-05-22T13:30:37.906Z">
 <meta property="article:author" content="Buildccy">
 <meta property="article:tag" content="不知道写什么，就随便打一些字">
 <meta name="twitter:card" content="summary">
@@ -197,6 +197,8 @@
 <li><input disabled="" type="checkbox"> 了解导致前端性能问题的根本原因</li>
 <li><input disabled="" type="checkbox"> 知道一些常用的性能问题的解决方案</li>
 </ul>
+<span id="more"></span>
+
 <h2 id="问题详解"><a href="#问题详解" class="headerlink" title="问题详解"></a>问题详解</h2><h3 id="初始阶段"><a href="#初始阶段" class="headerlink" title="初始阶段"></a>初始阶段</h3><h4 id="1-首页加载慢的优化"><a href="#1-首页加载慢的优化" class="headerlink" title="1. 首页加载慢的优化"></a>1. 首页加载慢的优化</h4><p>#####问题分析</p>
 <ul>
 <li>首页加载图片过多</li>
