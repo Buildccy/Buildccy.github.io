@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://Buildccy.github.io">
   <title>实践-hexo源码学习笔记 | Buildccy的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前期准备目的  个人博客搭建项目实践    从项目层次理解前端的工作内容    从源码角度理解使用hexo搭建博客的逻辑实现    搭建个人博客详见hexo官网安装步骤hexo官网  环境准备：Node.js  Git 安装hexo  开启个人博客之旅Buildccy的个人博客">
+  <meta name="description" content="实践-hexo源码学习笔记前期准备目的 1. 个人博客搭建项目实践2. 从项目层次理解前端的工作内容3. 从源码角度理解使用hexo搭建博客的逻辑实现  搭建个人博客详见hexo官网安装步骤hexo官网  环境准备：Node.js  Git 安装hexo  开启个人博客之旅Buildccy的个人博客使用hexo指令创建第一篇博文进入cmd中，在创建的个人博客的目录下通过hexo的指令完成内容的创建">
 <meta property="og:type" content="article">
 <meta property="og:title" content="实践-hexo源码学习笔记">
 <meta property="og:url" content="https://buildccy.github.io/2021/05/22/%E5%8D%9A%E5%AE%A2%E8%BF%9B%E9%98%B6-hexo%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Buildccy的个人博客">
-<meta property="og:description" content="前期准备目的  个人博客搭建项目实践    从项目层次理解前端的工作内容    从源码角度理解使用hexo搭建博客的逻辑实现    搭建个人博客详见hexo官网安装步骤hexo官网  环境准备：Node.js  Git 安装hexo  开启个人博客之旅Buildccy的个人博客">
+<meta property="og:description" content="实践-hexo源码学习笔记前期准备目的 1. 个人博客搭建项目实践2. 从项目层次理解前端的工作内容3. 从源码角度理解使用hexo搭建博客的逻辑实现  搭建个人博客详见hexo官网安装步骤hexo官网  环境准备：Node.js  Git 安装hexo  开启个人博客之旅Buildccy的个人博客使用hexo指令创建第一篇博文进入cmd中，在创建的个人博客的目录下通过hexo的指令完成内容的创建">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-22T10:15:29.000Z">
-<meta property="article:modified_time" content="2021-05-22T10:40:33.903Z">
+<meta property="article:modified_time" content="2021-05-22T11:59:46.565Z">
 <meta property="article:author" content="Buildccy">
 <meta property="article:tag" content="博客搭建 hexo">
 <meta name="twitter:card" content="summary">
@@ -175,26 +175,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><ul>
-<li><ol>
-<li>个人博客搭建项目实践</li>
-</ol>
-</li>
-<li><ol start="2">
-<li>从项目层次理解前端的工作内容</li>
-</ol>
-</li>
-<li><ol start="3">
-<li>从源码角度理解使用hexo搭建博客的逻辑实现</li>
-</ol>
-</li>
-</ul>
-<h2 id="搭建个人博客"><a href="#搭建个人博客" class="headerlink" title="搭建个人博客"></a>搭建个人博客</h2><p>详见hexo官网安装步骤<a target="_blank" rel="noopener" href="https://hexo.io/docs/">hexo官网</a></p>
+        <h1 id="实践-hexo源码学习笔记"><a href="#实践-hexo源码学习笔记" class="headerlink" title="实践-hexo源码学习笔记"></a>实践-hexo源码学习笔记</h1><h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><blockquote>
+<p><strong>1. 个人博客搭建项目实践</strong><br><strong>2. 从项目层次理解前端的工作内容</strong><br><strong>3. 从源码角度理解使用hexo搭建博客的逻辑实现</strong></p>
+</blockquote>
+<h3 id="搭建个人博客"><a href="#搭建个人博客" class="headerlink" title="搭建个人博客"></a>搭建个人博客</h3><p>详见hexo官网安装步骤<a target="_blank" rel="noopener" href="https://hexo.io/docs/">hexo官网</a></p>
 <ol>
 <li>环境准备：Node.js  Git</li>
 <li>安装hexo</li>
 </ol>
-<h1 id="开启个人博客之旅Buildccy的个人博客"><a href="#开启个人博客之旅Buildccy的个人博客" class="headerlink" title="开启个人博客之旅Buildccy的个人博客"></a>开启个人博客之旅<a href="https://buildccy.github.io/">Buildccy的个人博客</a></h1>
+<h2 id="开启个人博客之旅Buildccy的个人博客"><a href="#开启个人博客之旅Buildccy的个人博客" class="headerlink" title="开启个人博客之旅Buildccy的个人博客"></a>开启个人博客之旅<a href="https://buildccy.github.io/">Buildccy的个人博客</a></h2><h3 id="使用hexo指令创建第一篇博文"><a href="#使用hexo指令创建第一篇博文" class="headerlink" title="使用hexo指令创建第一篇博文"></a>使用hexo指令创建第一篇博文</h3><p>进入cmd中，在创建的个人博客的目录下通过hexo的指令完成内容的创建（new）、生成（generate）、服务器（sever）、部署（deploy）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new &quot;新的博客文章标题&quot;</span><br><span class="line">$ hexo sever</span><br><span class="line">$ hexo generate</span><br><span class="line">$ hexo deploy</span><br><span class="line">&lt;----可简写为 hexo n、hexo s、hexo g、hexo d----&gt;</span><br></pre></td></tr></table></figure>
+
       
 
       
