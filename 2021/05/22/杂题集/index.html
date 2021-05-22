@@ -6,19 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://Buildccy.github.io">
-  <title>项目实践-手撕hexo（第二期） | Buildccy的个人博客</title>
+  <title>杂题集 | Buildccy的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hexo项目文件解读在初始化一个新的博客项目时，hexo会在当前路径下生成多个文件夹，  source: 其中我所写的每一篇博文都会在source文件夹内themes: 下载的博客主题则在themes文件夹内_config.yml: _config.yml是站点配置文件，大多数配置都可以在此处修改package.json: 应用数据scaffolds： 脚手架文件夹 创建新帖子时，将基于脚手架生成">
+  <meta name="description" content="写个人博客中遇到的一些问题及解决思路配置个性化主题-yiliayilia是我在学习搭建博客中发现的一个较为成熟美观的hexo主题，配置个性化主题需在将下载好的主题文件放到themes目录下，并在配置文件_config.yml中更改默认主题为yilia  修改hexo根目录下的 _config.yml ： theme: yilia  在yilia主题下设置头像和网站图标头像  修改yilia目录下的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="项目实践-手撕hexo（第二期）">
-<meta property="og:url" content="https://buildccy.github.io/2021/05/22/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5-%E6%89%8B%E6%92%95hexo%EF%BC%88%E7%AC%AC%E4%BA%8C%E6%9C%9F%EF%BC%89/index.html">
+<meta property="og:title" content="杂题集">
+<meta property="og:url" content="https://buildccy.github.io/2021/05/22/%E6%9D%82%E9%A2%98%E9%9B%86/index.html">
 <meta property="og:site_name" content="Buildccy的个人博客">
-<meta property="og:description" content="hexo项目文件解读在初始化一个新的博客项目时，hexo会在当前路径下生成多个文件夹，  source: 其中我所写的每一篇博文都会在source文件夹内themes: 下载的博客主题则在themes文件夹内_config.yml: _config.yml是站点配置文件，大多数配置都可以在此处修改package.json: 应用数据scaffolds： 脚手架文件夹 创建新帖子时，将基于脚手架生成">
+<meta property="og:description" content="写个人博客中遇到的一些问题及解决思路配置个性化主题-yiliayilia是我在学习搭建博客中发现的一个较为成熟美观的hexo主题，配置个性化主题需在将下载好的主题文件放到themes目录下，并在配置文件_config.yml中更改默认主题为yilia  修改hexo根目录下的 _config.yml ： theme: yilia  在yilia主题下设置头像和网站图标头像  修改yilia目录下的">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-22T12:12:47.000Z">
-<meta property="article:modified_time" content="2021-05-22T13:12:39.379Z">
+<meta property="og:image" content="http://pngimg.com/uploads/acorn/small/acorn_PNG37016.png">
+<meta property="og:image" content="https://buildccy.github.io/img/smalllogo.png">
+<meta property="article:published_time" content="2021-05-22T13:36:29.000Z">
+<meta property="article:modified_time" content="2021-05-22T14:36:12.052Z">
 <meta property="article:author" content="Buildccy">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://pngimg.com/uploads/acorn/small/acorn_PNG37016.png">
   
     <link rel="alternative" href="/atom.xml" title="Buildccy的个人博客" type="application/atom+xml">
   
@@ -154,29 +157,43 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-项目实践-手撕hexo（第二期）" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-杂题集" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      项目实践-手撕hexo（第二期）
+      杂题集
     </h1>
   
 
         
-        <a href="/2021/05/22/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5-%E6%89%8B%E6%92%95hexo%EF%BC%88%E7%AC%AC%E4%BA%8C%E6%9C%9F%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2021-05-22T12:12:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-22</time>
+        <a href="/2021/05/22/%E6%9D%82%E9%A2%98%E9%9B%86/" class="archive-article-date">
+  	<time datetime="2021-05-22T13:36:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="hexo项目文件解读"><a href="#hexo项目文件解读" class="headerlink" title="hexo项目文件解读"></a>hexo项目文件解读</h1><p>在初始化一个新的博客项目时，hexo会在当前路径下生成多个文件夹，</p>
+        <h1 id="写个人博客中遇到的一些问题及解决思路"><a href="#写个人博客中遇到的一些问题及解决思路" class="headerlink" title="写个人博客中遇到的一些问题及解决思路"></a>写个人博客中遇到的一些问题及解决思路</h1><h2 id="配置个性化主题-yilia"><a href="#配置个性化主题-yilia" class="headerlink" title="配置个性化主题-yilia"></a>配置个性化主题-yilia</h2><p>yilia是我在学习搭建博客中发现的一个较为成熟美观的hexo主题，<br>配置个性化主题需在将下载好的主题文件放到themes目录下，并在配置文件_config.yml中更改默认主题为yilia</p>
 <blockquote>
-<p>source: 其中我所写的每一篇博文都会在source文件夹内<br>themes: 下载的博客主题则在themes文件夹内<br>_config.yml: _config.yml是站点配置文件，大多数配置都可以在此处修改<br>package.json: 应用数据<br>scaffolds： 脚手架文件夹 创建新帖子时，将基于脚手架生成相应的文件（默认的有三种形式的md文件：draft.md page.md post.md）</p>
+<p>修改hexo根目录下的 <code>_config.yml</code> ： <code>theme: yilia</code></p>
+</blockquote>
+<h2 id="在yilia主题下设置头像和网站图标"><a href="#在yilia主题下设置头像和网站图标" class="headerlink" title="在yilia主题下设置头像和网站图标"></a>在yilia主题下设置头像和网站图标</h2><p>头像</p>
+<blockquote>
+<p>修改yilia目录下的 <code>_config.yml</code> ：<code>avatar: 头像路径或链接</code><img src="http://pngimg.com/uploads/acorn/small/acorn_PNG37016.png" alt="我的头像"></p>
+</blockquote>
+<p>网站图标</p>
+<blockquote>
+<p>修改yilia目录下的 <code>_config.yml</code> ：<code>favicon: 网站图标路径或链接</code><img src="https://buildccy.github.io/img/smalllogo.png" alt="我的头像"></p>
+</blockquote>
+<h2 id="文章太长，在yilia主题下截断文章，通过点击more显示更多"><a href="#文章太长，在yilia主题下截断文章，通过点击more显示更多" class="headerlink" title="文章太长，在yilia主题下截断文章，通过点击more显示更多"></a>文章太长，在yilia主题下截断文章，通过点击more显示更多</h2><p>文章太长，截断按钮文字不是通过配置文件_config.yml实现的，而是在文章内容里实现，在你想截断的文章位置加上</p>
+<blockquote>
+<p>上文</p>
+<span id="more"></span>
+<p>下文</p>
 </blockquote>
 
       
@@ -257,7 +274,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://buildccy.github.io/2021/05/22/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5-%E6%89%8B%E6%92%95hexo%EF%BC%88%E7%AC%AC%E4%BA%8C%E6%9C%9F%EF%BC%89/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://buildccy.github.io/2021/05/22/%E6%9D%82%E9%A2%98%E9%9B%86/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -271,18 +288,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/05/22/%E6%9D%82%E9%A2%98%E9%9B%86/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          杂题集
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/05/22/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5-%E6%89%8B%E6%92%95hexo%EF%BC%88%E7%AC%AC%E4%B8%80%E6%9C%9F%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">项目实践-手撕hexo（第一期）</div>
+    <a href="/2021/05/22/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5-%E6%89%8B%E6%92%95hexo%EF%BC%88%E7%AC%AC%E4%BA%8C%E6%9C%9F%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">项目实践-手撕hexo（第二期）</div>
       <i class="icon-circle-right"></i>
     </a>
   
