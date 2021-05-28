@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{
+				overflow-x: hidden;
+				/* overflow-y: hidden; */
+			}
+/* 			#head {
+				width: 1880px;
+				height: 1040px;
+				overflow: hidden;
+				margin: 0 auto;
+				float: right;
+			} */
+			#container {
+				width: 1880px;
+				height: 1040px;
+				overflow: hidden;
+				position: absolute;
+				
+			}
+
+			#picsBox {
+				width: 18800px;
+				height: 1040px;
+				position: relative;
+				left:-1880px;
+			}
+
+			img{
+				width: 1880px;
+				height: 1040px;
+				float: left;
+			}
+			
+			#pointBox{
+				position: absolute;
+				top:980px;
+				width: 640px;
+				height: 80px;
+				margin:0 620px ;
+				/* background-color: rgba(222,222,222,0.1); */
+				/* z-index: 2; */
+			}
+			.points{
+				display: none;
+				width: 20px;
+				height: 20px;
+				background-color:  rgba(222,222,222,0.2);
+				margin: 30px;
+				border-radius: 50%;
+				z-index: 3;
+				float: left;
+			}
+			#changeButtonbox{
+				position: absolute;
+				top:540px;
+				width: 1880px;
+				height: 80px;
+				margin: 0;
+				/* background-color: rgba(222,222,222,0.1); */
+				/* z-index: 2; */
+			}
+
+			.changeButton{
+				display: none;
+				cursor: pointer;
+				width: 80px;
+				height: 80px;
+				background-color: rgba(222,222,222,0.2);
+				text-decoration: none;
+				font-size: 60px;
+				color:  rgba(222,222,222,0.5);
+				text-align: center;
+				z-index: 3;
+			}
+			#container:hover .changeButton{
+				display: block;
+			}
+			#container:hover .points{
+				display: block;
+			}
+/* 			#container:hover .points{
+				display: block;
+			} */
+			#pre{
+				float: left;
+			}
+			#next{
+				float: right;
+			}
+			.on{
+				background-color: yellow;
+			}
+			p{
+				font-size: 10px;
+				margin: 0;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="head">
+			<div id="container">
+				<div id="picsBox">
+					<img src="img/dee1-hvvuiym6454755.jpg" alt="8" >
+					<img src="./img/a1f9-iwtqvym2937427_万能看图王_万能看图王.jpg" alt="1">
+					<img src="img/103bbbff737da2acc2b7aa184a16568e.png" alt="2">
+					<img src="img/4a16-hvvuiym6454575.jpg" alt="3">
+					<img src="img/takqrimgr1l.jpg" alt="4">
+					<img src="img/1.5732556314910908E9.jpeg" alt="5">
+					<img src="img/201910151121256e58a813d973ec278690f822b7ed173a.jpg.w1600.h900.jpg" alt="6">
+					<img src="img/1-1PR2230Q7.jpg" alt="7">
+					<img src="img/dee1-hvvuiym6454755.jpg" alt="8">
+					<img src="./img/a1f9-iwtqvym2937427_万能看图王_万能看图王.jpg" alt="1">
+				</div>
+				<div id="pointBox">
+					<div class="points on"><p>1</p></div>
+					<div class="points"><p>2</p></div>
+					<div class="points"><p>3</p></div>
+					<div class="points"><p>4</p></div>
+					<div class="points"><p>5</p></div>
+					<div class="points"><p>6</p></div>
+					<div class="points"><p>7</p></div>
+					<div class="points"><p>8</p></div>
+				</div>
+				<div id="changeButtonbox">
+					<a href="javascript:;" class="changeButton" id="pre">&lt;</a>
+					<a href="javascript:;" class="changeButton" id="next">&gt;</a>
+				</div>
+			</div>
+		</div>
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.js"></script>
+		<script type="text/javascript" src="./js/jq轮播.js"></script>
+	</body>
+</html>
