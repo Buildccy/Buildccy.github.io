@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+
+		<style>
+			*{
+				margin: 0;
+				border: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			#container{
+				background-color: wheat;
+				width: 408px;
+				height: 408px;
+				border: 1px black solid;
+				display: grid;
+/* 				grid-template-columns: 100px 100px 100px 100px;
+				grid-template-rows: 100px 100px 100px 100px; */
+				grid-template-areas: 
+					"a0 a1 a2 a3"
+					"a4 a5 a6 a7"
+					"a8 a9 a10 a11"
+					"a12 a13 a14 a15"
+				;
+				grid-gap: 1px;
+			}
+			div[id]{
+				background-color: aqua;
+			}
+		</style>
+	</head>
+	<body>
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.js"></script>
+		<script src="main.js" type="text/javascript" charset="utf-8"></script>
+		<div id="container">
+
+		</div>
+		<script type="text/javascript">
+			function sortNumber(a, b) {
+				return a - b
+			}
+
+			//随机选中两个不同的格子，初始化两个包含数字的p标签
+			var randomNumber1;
+			var randomNumber2;
+			var newRandomNumber;
+			var numberBox;
+			var newNumberBox = [];
+
+
+			function creatRandomNumber() {
+				//生成第一个随机数字randomNumber1，将第一个p绑定到索引值相同的div中，然后从数组中将对应的元素删除
+				randomNumber1 = Math.floor(Math.random() * 16)
+				numberBox = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
+				$("#container").append("<div class='boxes floatBoxes' id=" + (randomNumber1) +
+					" style='background-color:pink;grid-area:a" + (randomNumber1) + "'><p>2</p></div>")
+				numberBox.splice(randomNumber1, 1)
+
+				//生成另一个随机数字newRandomNumber作为中间量，将第二个p绑定到索引值相同的div中，然后从数组中将对应的元素删除
+				newRandomNumber = Math.floor(Math.random() * 15)
+				randomNumber2 = numberBox[newRandomNumber]
+				$("#container").append("<div class='boxes floatBoxes' id=" + (randomNumber2) +
+					" style='background-color:pink;grid-area:a" + (randomNumber2) + "'><p>4</p></div>")
+				numberBox.splice(newRandomNumber, 1)
+
+				//将删除的两个元素添加到事先准备好的newNumberBox中
+				newNumberBox.push(randomNumber1, randomNumber2)
+				newNumberBox.sort(sortNumber)
+			}
+			creatRandomNumber();
+
+			 console.log(newNumberBox)
+			// console.log(randomNumber1, randomNumber2)
+			console.log(numberBox)
+		</script>
+
+	</body>
+</html>

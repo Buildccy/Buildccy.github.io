@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#box1{
+				width: 200px;
+				height: 200px;
+				background-color: #bfa;
+				position: absolute;
+			}
+		</style>
+		<script type="text/javascript">
+			/*为元素绑定多个响应函数，在某些情况下对元素绑定某些事件时需要使用监听器来帮助
+			*元素绑定的同一事件在不同浏览器的不同表达格式
+			* 例如：鼠标滚轮滚动事件
+			* 		chrome以及ie：event.wheelDelta;
+			* 		火狐：event.detail;
+			* 在绑定了event.wheelDelta后，为了绑定event.detail可以添加事件监听器使元素能同时绑定多个事件*/
+			//下面为自定义的事件监听器函数，其中obj：要绑定的元素；eventStr：要绑定的事件；callback：回调函数
+			function bang(obj,eventStr,callback){
+				if(obj.addEventListener){
+					//适用于大部分浏览器
+					obj.addEventListener(eventStr,callback,false)//是否在捕获阶段触发事件，需要一个布尔值，一般都传false
+				}else{
+					//适用于ie8及以下浏览器
+					obj.attachEvent("on"+eventStr,function(){
+						callback.call(obj);
+					})
+				}
+			}
+			
+			window.onload=function(){
+				
+				var box1=document.getElementById("box1");
+				//获取当鼠标滚轮滚动时的事件，onmousewheel事件火狐不支持，
+				//必须通过addEventListener方法来绑定DOMMousuScroll来使火狐支持
+				box1.onmousewheel=function(event){
+					event=event||window.event;
+					//wheelDelta获取滚轮滚动的方向，正值120为向上滚，负值-120为向下滚，火狐不支持；
+					//alert(event.wheelDelta);
+					//detail支持火狐，向上滚值为负值，向下滚值为正值,符号wheelDelta相反
+					//alert(event.detail);
+					
+					//兼容多种浏览器并获取鼠标滚轮滚动方向
+					if(event.wheelDelta>0||event.detail<0){
+						if(box1.clientHeight>10){
+						box1.style.height=box1.clientHeight-10+"px";
+						//console.log(typeof box1.clientHeight);
+						//console.log(typeof box1.style.height);
+						}else{
+							return false;
+						}
+					}else{
+						box1.style.height=box1.clientHeight+10+"px";
+					}
+					/*阻止浏览器的默认行为：鼠标滚动事件发生时会带动页面滚动的默认事件
+					*但是对火狐无效，因为火狐绑定的addEventListener()绑定函数
+					*取消默认行为时不能return false
+					* 需采用event.preventDefault()方法
+					* 注意该方法ie8不兼容,所以要判断
+					*/
+					event.preventDefault&&event.preventDefault();
+					return false;
+				}
+				//绑定addEventListener函数来兼容火狐的DOMMouseScroll方法来捕捉滚轮滚动事件
+				bang(box1,"DOMMouseScroll",box1.onmousewheel);
+			}
+		</script>
+	</head>
+	<body style="height: 1000px;">
+		<div id="box1"></div>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#point{
+				width: 300px;
+				height: 200px;
+				border: #000000 1px solid;
+			}
+			#locaded{
+				width: 300px;
+				height: 50px;
+				border: #000000 1px solid;
+				margin-top: 20px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var point=document.getElementById("point");
+				var locaded=document.getElementById("locaded");
+				/*
+				*事件对象
+				* 当事件的响应函数被触发时，浏览器每次都会将一个事件对象作为实参传递进响应函数
+				* 这个时间对象中封装了当前事件的一切信息，比如：鼠标的坐标，按下了哪个键，滚轮的方向等等
+				* 因为响应的事件的一切信息都封装到了这个事件对象中，为了将要用到的信息作为实参传递出来
+				* 所以就需要设置形参，即event。(要深刻理解响应事件是被记录到了形参所代表的事件对象中
+				* 而不是point的属性，所以point.clientX和point.clientY是错误理解)
+				*/
+				point.onmousemove=function(event){
+					
+					//var x=point.clientX;//undefined
+					//var y=point.clientY;//undefined
+					var x=event.clientX;
+					var y=event.clientY;
+					locaded.innerHTML="x="+x+"y="+y;
+					//要注意在ie8及以下浏览器存在不兼容问题
+					//此时可采用window.enentX来调取坐标
+					//即在ie8及一下版本的浏览器是将事件对象作为window对象的属性保存的
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="point"></div>
+		<div id="locaded"></div>
+	</body>
+</html>

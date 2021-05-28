@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+			 var obj1 = new Object();//创建对象方法①：创建对象的构造函数
+			obj1.abc = 123;
+			obj1["name"] = "nihao";//对象的属性名除了可以用.来接还可以用[""]来表示，针对于一些命名复杂的属性名可采用这种方法
+			// console.log(obj1);
+			
+			var obj2  = {name:"李白",gender:"男"};//创建对象方法②：  常用的创建对象的方式:对象字面量，要注意这种方法创建的对象里面的名值对之间是用“：”而不是“=”连接的
+													//不同名值对之间用","连接而不用分号，最后一个名值对不要","
+			
+			
+			var fun1 = new Function("console.log('hello')");//创建函数方法①： 构造函数，用字符串的形式来封装函数 不常用
+			function fun2(){console.log(fun2),document.write("这是函数2")}//创建函数方法②：  常用的两种创建函数的方法：声明
+			var fun3 = function(){console.log(fun3), document.write("这是函数3")};//创建函数方法③：  常用的两种创建函数的方法：赋值
+			/*封装的函数没调用时不会自动执行*/
+			// fun2();//执行函数
+			// fun3();//执行函数
+			
+			function fun(a , b , c){//"()"内为形参，当函数内需要变量时，在()内输入形参
+				var d = a+b+c;
+				return d;//必须有return才能使函数返回一个值
+			
+			}
+			var result = fun( 1 , 2 , 3);//"()"内为实参，实参为形参赋值
+			// console.log(d);//会报错，函数内的形参为undefined
+			console.log(result);
+			console.log(typeof d);//undefined
+			
+			(function(){
+				number = 123;
+			})()//对一个未命名的函数可以将其用（）括起来 并在其后跟一个（）来快速执行这个未命名的函数，一般用于只执行一次的函数
+
+			
+			for(var n in obj1){
+				console.log(n+":"+obj1[n]);//for in 语句用来枚举一个对象里面的所有属性，将属性名赋值给变量n，将属性值用 对象名[] 来表示即obj1[n]来表示,注意是[]不是[""]
+			}
+			
+			
+			
+			/*调用函数称为调用对象的方法①，调用一个对象的方法和调用这个函数没有区别
+			var obj3 = {
+				f : 123,
+				g :"你好",
+				fun4 : function(){}//函数可以作为对象的属性，此时称这个函数为这个对象的方法，要注意此时函数的表达方法要符合对象内属性的命名规则
+			}
+			console.log(obj3.fun4);
+			obj3.fun4()//调用obj3的fun4方法*/
+			
+			//调用函数称为调用对象的方法②，调用一个对象的方法和调用这个函数没有区别
+			var obj3 = new Object();
+			obj3.f = 123;
+			obj3.g = "你好";
+			obj3.fun4 = function(){};//函数可以作为对象的属性，此时称这个函数为这个对象的方法，要注意此时函数的表达方法要符合对象内属性的命名规则
+			console.log(obj3.fun4);
+			obj3.fun4()//调用obj3的fun4方法
+			
+		</script>
+		
+	</body>
+</html>

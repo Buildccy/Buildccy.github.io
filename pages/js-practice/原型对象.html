@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			/*
+			*原型对象prototype的作用：在创建构造函数时，可以将这些对象共有的属性和方法添加到构造函数的原型对象中
+			* 这样不用分别为每个对象添加，也不会影响到全局作用域，就可以使这些对象具有这些属性和方法了
+			*/
+			function Per(name,age,gender){
+				this.name = name;
+				this.age = age;
+				this.gender = gender;
+				Per.prototype.sayName =fun;//可向原型对象中添加属性或方法都可
+				/*prototype是每创建一个函数时解析器向函数中自动添加的一个默认属性，即原型对象，
+				* 其作用相当于函数中的一个公共区域，所有同一个类的实例都可以访问到这个对象
+				* 我们可以将对象中共有的内容统一设置到原型对象中，当使用构造函数时，可以调用原型对象里面的内容
+				*注：使用前提是在构造函数中，在普通函数中调用prototype没有作用，并且当函数中存在相同属性时，原型变量中的属性不会被调用
+				*/
+			}
+			function fun(){
+				alert(this.name);
+			}
+			var per1 = new Per("孙悟空",18,"男");
+			per1.sayName();
+			console.log("per1.sayName=" + per1.sayName);
+			console.log(per1.__proto__ == Per.prototype);
+		</script>
+		
+		
+	</body>
+</html>

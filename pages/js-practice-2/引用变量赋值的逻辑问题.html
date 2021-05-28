@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/*
+			*关于引用变量赋值的问题
+			* 1.n个引用变量指向同一个对象，通过一个变量修改其内部数据，会导致其他所有变量修改相应数据，（修改堆内存内数据，栈内存中保存的地址值不变）
+			* 2.2个应用变量指向同一个对象，让其中一个变量指向另一个对象，不会影响其他引用变量的数据（修改的是地址值，在堆内存中开辟了新的内存）
+			* */
+			var a = {name:"tom",age:10};
+			function fun(obj){
+				//console.log(obj===window.a);
+				obj={age:12}
+				console.log(obj);
+				return obj;
+			}
+			fun(a);//相当于a=obj,该函数实际执行时修改的是obj的地址值并开辟新的堆内存，故对a没有影响
+			console.log(a);
+
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

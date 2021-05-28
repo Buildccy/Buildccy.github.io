@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			// var a = 10; 
+			// {
+			// 	a = 99;
+			// 	function a(){
+			// 	}
+			// 	a = 30;
+			// }
+			// console.log(a);
+			
+			//上述代码要求判断console.log(a)输出地值
+			/*
+			*输出结果为99,要弄清原理先要理清代码执行的顺序
+			*/
+			var a = 10;//①
+			{
+				a = 99;//④
+				console.log(a);//99
+				function a(){
+				}//③
+				console.log(a);//99
+				a = 30;//②
+				console.log(a);//30
+			}
+			console.log(a);//99
+			
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

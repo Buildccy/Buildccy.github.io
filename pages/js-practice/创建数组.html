@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*用构造函数的方法来创建数组，可以向构造函数括号内添加元素，
+			 *将要添加的元素作为构造函数的参数传递，元素之间使用逗号隔开
+			 *注意：当在构造函数内只添加一个数时，会被计算机读成长度length*/
+			var arr = new Array();
+			var arr = new Array(12,24,33)//注意：当在构造函数内只添加一个数时，会被计算机读成长度length
+			/*用字面量的方法来创建数组*/
+			var arr = [];
+			var arr = [12,24,33]//可以向字面量方法创造的数组中添加元素，元素之间使用逗号隔开
+			
+			
+			
+			/*数组内可以放任意的数据类型*/
+			var arr = ["hello",23,true,null,undefined];//数组内元素的值可以是常用的数据类型
+			var obj = {name:"孙悟空"};
+			var fun = function(){alert("hi")}
+			arr[arr.length] = obj;//也可以是对象，向数组的最后添加对象类型的元素
+			arr[arr.length] = fun;//也可以是函数，向数组的最后添加函数元素
+			console.log(arr);
+			arr[6]();
+			
+			var arr2 = [{name:"猪八戒"}, function(){} ];//直接在数组内表达对象和函数的方法
+			console.log(arr2);
+			
+			var arr3 = [{name:"a"},{name:"b"},{name:"c"}];//多个对象
+			console.log(arr3);
+			
+			var arr4 = [function(){alert(1)},function(){alert(2)},function(){alert(3)}];//多个函数
+			console.log(arr4);
+			arr4[0]();
+		</script>
+		
+	</body>
+</html>

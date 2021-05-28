@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//判断一个数是否为质数
+			var i = 2;
+			var sum = prompt("请输入一个大于1的整数，判断其是否为质数");
+			var a = true;
+			if(sum > 1 ){for( ; i < sum ; i++){
+					if(sum % i == 0){
+						a = false;
+					}
+				}
+			}else{
+				alert("输入的值不符合规范");
+			}
+			if(a){
+				alert(sum + "是质数");
+			}else{
+				alert(sum + "不是质数");
+			}
+			
+		</script>
+		
+	</body>
+</html>

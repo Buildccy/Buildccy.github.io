@@ -1,0 +1,106 @@
+var floatBoxes
+			var floatBottom
+			var floatLeft
+			var floatRight
+			//给键盘绑定上下左右移动随机生成的盒子的事件
+			document.onkeydown = function(e) {
+				//获得现存的floatBoxes类，以数组的形式储存
+				floatBoxes = document.getElementsByClassName("floatBoxes");
+				floatBoxes = Array.from(floatBoxes)
+				// console.log(floatBoxes[0].id)
+				e = window.e || e;
+
+
+				var idNumber;
+				var aArray;
+
+				function createAArray(derection) {
+
+					if (derection == "top") {
+						aArray = Array(16).fill(17) //大于15即可
+					} else if (derection == "bottom") {
+						aArray = Array(16).fill(-1) //大于15即可
+					} else if(derection == "left"){
+						
+					}else if(derection == "right"){
+						
+					}else{
+						alert("请选择W\S\A\D作为上下左右方向键操作")
+					}
+					//遍历每一个floatBoxes盒子的id值,将id插入到数组aArray中以便之后排序	
+					for (i = 0; i < floatBoxes.length; i++) {
+						idNumber = floatBoxes[i].getAttributeNode("id").value
+						aArray.splice(idNumber, 1, idNumber);
+					}
+					console.log("aArray=" + aArray)
+
+				}
+				var key = e.keyCode
+				var bArray = [];
+				var cArray = []
+				switch (key) {
+					case 87:
+						function change() {
+							for (i = 0; i < 4; i++) {
+								for (j = 0; j < 4; j++) {
+
+									var q = i + j * 4;
+									bArray.push(aArray[q])
+								}
+								bArray = bArray.sort(sortNumber)
+								cArray.push(bArray)
+								console.log(bArray)
+								bArray = []
+							}
+							console.log(cArray)
+						};
+
+						function changeNumber() {
+							aArray = [];
+							for (i = 0; i < 4; i++) {
+								for (j = 0; j < 4; j++) {
+									aArray.push(cArray[j][i])
+								}
+							}
+							console.log(aArray)
+						}
+
+						function move() {
+							// floatBoxes = floatBoxes.sort(sortNumber);
+							// console.log(floatBoxes)
+							for (i = 0; i < floatBoxes.length; i++) {
+								for (j = 0; j < 16; j++) {
+									// console.log(aArray[j]);
+									if (floatBoxes[i].getAttributeNode("id").value == aArray[j]) {
+										floatBoxes[i].getAttributeNode("id").value = j;
+										floatBoxes[i].style.backgroundColor = "red";
+										break;
+									}
+								}
+
+								floatBoxes[i].style.gridArea = "a" + (floatBoxes[i].getAttributeNode("id").value);
+							}
+						};
+						createAArray("top");
+
+						change();
+						changeNumber();
+						move();
+						break;
+					case 83:
+						createAArray("bottom");
+
+						change();
+						changeNumber();
+						move();
+						break;
+					case 65:
+						break;
+
+					case 68:
+						break;
+
+
+
+				}
+			}

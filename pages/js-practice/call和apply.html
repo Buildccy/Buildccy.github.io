@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//call()与apply()是用于函数对象的方法，
+			function fun(){};
+			/*fun();
+			fun.call();
+			fun.apply();*/
+			
+			//调用call()和apply()方法时可以为函数指定一个对象作为参数，此时这个对象会成为函数执行的this
+			function fun(){this}
+			var obj = {};
+			fun.call(obj);
+			fun.apply(obj);
+			//例如：
+			var obj1 = {
+				name :"obj1",
+				sayName : function(){
+					alert(this.name); 
+				} 
+			}
+			var obj2 = {
+				name : "obj2"
+			}
+			//obj1.sayName.call(obj2);
+			
+			//call()方法可以在指定一个对象作为参数后，在其后面传递实参，
+			//而apply()方法则需要把实参封装到一个数组中
+			function fun1(a,b){
+				console.log("a="+a)
+				console.log("b="+b)
+			}
+			fun1.call(obj2,2,3);
+			fun1.apply(obj2,[4,5]);
+			
+			/*说白了call()和apply()都是用来指定this的对象*/
+			
+			/*
+			*this的情况
+			* 1.以函数形式调用时，this永远都是window；
+			* 2.以方法形式调用时，this是调用方法的对象；
+			* 3以构造函数调用时，this是新创建的那个对象；
+			* 4使用call和allpy调用时，this是指定的那个对象
+			*/
+			
+			
+		</script>
+		
+	</body>
+</html>

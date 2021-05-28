@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="number" id="number" placeholder="22"/><button type="button" id="btn">输入</button>
+		<script type="text/javascript" >
+/* 			setTimeout(function(){
+				console.log(9999)
+			},9000)
+			setTimeout(function(){
+				console.log(6666)
+			},6000)
+			console.log(1111)
+			alert("警告")
+			console.log(2222) */
+/* 			function f(n){
+				return n<=2 ?1:f(n-1)+f(n-2)
+			}
+			var btn=document.getElementById("btn")
+			var number=document.getElementById("number")
+			btn.onclick=function(){
+				var result = f(number.value)
+				alert(result)
+			} */
+			
+
+			
+			var number =document.getElementById("number")
+			document.getElementById("btn").onclick=function(){
+				var numb =number.value
+				var worker =new Worker('worker.js')
+				worker.onmessage=function(event){
+					console.log("主线程接收来自分线程的数据："+event.data)
+					alert(event.data)
+				}
+				worker.postMessage(numb)
+				console.log("主线程向分线程传入："+numb)
+			}
+		</script>
+	</body>
+</html>

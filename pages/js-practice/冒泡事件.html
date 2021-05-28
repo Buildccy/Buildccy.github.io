@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#s1{
+				background-color: #00FFFF;
+			}
+			#box1{
+				width: 200px;
+				height: 200px;
+				background-color: #BBFFAA;
+			}
+			
+		</style>
+		<script type="text/javascript">
+			
+			/*
+			*事件的冒泡Bubble
+			* -所谓的冒泡指的就是事件的向上传导，
+			* 当后代元素的事件被触发时，其祖先元素的相同事件也会被触发
+			*/ 
+			
+			window.onload=function(){
+				var s1=document.getElementById("s1");
+				var box1=document.getElementById("box1");
+				var body=document.getElementsByTagName("body");
+				
+				
+				console.log(s1);//本质是html标签
+				console.log(body);//本质是数组，故body.onclick无效，body[0].onclik可以
+				console.log(document.body);//本质是html标签
+				
+				
+				s1.onclick=function(){
+					alert("我是span的单击响应函数");
+				}
+				box1.onclick=function(){
+					alert("我是div的单击响应函数");
+				}
+				
+				
+				document.body.onclick=function(){
+					alert("我是body的单击响应函数");
+				}
+				// body[0].onclick=function(){
+				// 	alert("我是body的单击响应函数");
+				// }
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box1">我是div
+		
+			<span id="s1">
+				我是span
+			</span>
+		</div>
+	</body>
+</html>

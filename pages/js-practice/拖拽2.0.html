@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#box1{
+				width: 100px;
+				height: 100px;
+				background-color: #00FFFF;
+				position: absolute;
+				left=0;
+				top=0;
+			}
+			#box2{
+				width: 100px;
+				height: 100px;
+				background-color: yellow;
+				position: absolute;
+				left: 200px;
+				top: 200px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var box1=document.getElementById("box1");
+				var box2=document.getElementById("box2");
+				fun(box1);
+				fun(box2);
+			}
+		
+			function fun(obj){
+				obj.onmousedown=function(event){
+					//为了取消浏览器的默认行为，采用setCapture方法捕捉onmousedown
+					obj.setCapture&&obj.setCapture();//为了兼容ie8，相当于if语句判断浏览器是否存在该方法并决定是否执行
+					
+					var x=event.clientX-obj.offsetLeft;//x为每次点击鼠标时鼠标到obj左上角的水平距离
+					var y=event.clientY-obj.offsetTop;//y为每次点击鼠标时鼠标到obj左上角的垂直距离
+					document.onmousemove=function(event){
+						var left=event.clientX-x;//
+						var top=event.clientY-y;
+						//console.log(typeof left);//number
+						//console.log(typeof obj.style.left);//string
+						obj.style.left=left+"px";
+						obj.style.top=top+"px";
+						// obj.style.left=obj.offsetLeft+"px";//无法实现拖拽，因为offsetLeft是只读的，要想实现拖拽只能修改style.left
+						// obj.style.top=obj.offsetTop+"px";//同上
+						
+					}
+					document.onmouseup=function(){
+						document.onmousemove=null;
+						document.onmouseup=null;
+					}
+					/*取消浏览器的默认行为，适用于火狐chrome及ie9以上
+					禁止包括刷新页面，拖拽导致网页自动搜索相关内容的行为*/
+					return false;
+					/*ie8及以下不兼容上述取消默认行为的方法，
+					需要采用setCaputure方法捕捉onmousedown
+					和relaseCaputure方法在onmouseup时取消捕捉*/
+					obj.releaseCapture&&obj.releaseCapture();//为了兼容ie8，相当于if语句判断浏览器是否存在该方法并决定是否执行
+				}
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+		<p>我是一段文字</p>
+		<div id="box1"></div>
+		<div id="box2"></div>
+	</body>
+</html>
+

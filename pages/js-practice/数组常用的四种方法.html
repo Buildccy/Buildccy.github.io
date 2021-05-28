@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr = ["李白","杜甫","李商隐","白居易","李贺"];
+			console.log(arr);
+			
+			/*一；push()用于在数组最后添加一个或多个元素并返回新的长度*/
+			arr.push("杜牧","陆游");
+			console.log(arr);
+			console.log("arr.push()="+arr.push());//返回值是调用后的长度;push()内必须有元素才能被调用
+			
+			/*二；pop()用于在数组最后删去一个元素并返回该元素*/
+			arr.pop();
+			console.log("arr.pop()="+arr.pop());//arr.pop();每出现一次就会被调用一次并返回被删去的元素，pop()出现了两次，实际上被调用了两次
+			console.log(arr);
+			
+			/*三；unshift()用于在数组最前面添加一个或多个元素并返回新的长度*/
+			arr.unshift("贾岛","岑参");
+			console.log(arr);
+			console.log("arr.unshift()="+arr.unshift());//返回值是调用后的长度；unshift()内必须有元素才能被调用
+			
+			/*四；shift()用于在数组最前面删去一个元素并返回该元素*/
+			arr.shift();
+			console.log("arr.shift()="+arr.shift());//arr.shift();每出现一次就会被调用一次并返回被删去的元素，shift()出现了两次，实际上被调用了两次
+			console.log(arr);
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var num = 123;
+			var boolean1 = true;
+			var str = "nihao";
+			/*包装类，可以将基本数据类型转换为对象：Number()、Boolean()、String()，
+			*在浏览器底层用于处理需要对基本数据类型的方法和属性调用时进行的自动转换
+			*在js中，基本数据类型number,string,boolean.NaN,undefined都不能添加方法和属性的
+			*即console.log(num.xx)会报错
+			*num = num.toString成立是因为浏览器会临时使用包装类将其转换为对象，然后调用对象的属性和方法
+			*调用完以后，再将其转换为原数据类型
+			*/
+			var a =String(num);
+			console.log(typeof a);
+		</script>
+	</body>
+</html>

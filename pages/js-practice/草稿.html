@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 消除默认样式 */
+			*{
+			  padding: 0;
+			  margin: 0;
+			}
+			#container {
+				width: 200px;
+				height: 380px;
+				background-color: #EEEEEE;
+				margin: 100px auto;
+				border: #000000 1px solid;
+				/* 开启相对定位 */
+				position: relative;
+			}
+			/* 块样式设置 */
+			.activity_model{
+			  width: 20px;
+			  height: 20px;
+			  background-color: hotpink;
+			  border: 0.3px solid #eeeeee;
+			  box-sizing: border-box;
+			  /* 开启绝对定位 */
+			  position: absolute;
+			}
+		</style>
+		<script type="text/javascript">
+			   function init(){
+			      createModel();
+			    }
+			var step = 20;
+			//MySQL函数，分割容器container,18行10列，是定位前提
+			var ROW_COUNT = 18;
+			COL_COUNt = 10;
+			var models = [
+				//七种形状的俄罗斯方块的模型的数据源，通过伪数组的形式保存位置信息
+				//"L"形
+				{
+					0: {
+						row: 0,
+						col: 0
+					},
+					1: {
+						row: 1,
+						col: 0
+					},
+					2: {
+						row: 2,
+						col: 0
+					},
+					3: {
+						row: 2,
+						col: 1
+					}
+				},
+				//"J"形
+				{
+					0: {
+						row: 0,
+						col: 1
+					},
+					1: {
+						row: 1,
+						col: 1
+					},
+					2: {
+						row: 2,
+						col: 1
+					},
+					3: {
+						row: 2,
+						col: 0
+					}
+				},
+				//"田"形
+				{
+					0: {
+						row: 0,
+						col: 0
+					},
+					1: {
+						row: 0,
+						col: 1
+					},
+					2: {
+						row: 1,
+						col: 0
+					},
+					3: {
+						row: 1,
+						col: 1
+					}
+				},
+				//"土"形
+				{
+					0: {
+						row: 0,
+						col: 1
+					},
+					1: {
+						row: 1,
+						col: 0
+					},
+					2: {
+						row: 1,
+						col: 1
+					},
+					3: {
+						row: 1,
+						col: 2
+					}
+				},
+				//"一"形
+				{
+					0: {
+						row: 0,
+						col: 0
+					},
+					1: {
+						row: 0,
+						col: 1
+					},
+					2: {
+						row: 0,
+						col: 2
+					},
+					3: {
+						row: 0,
+						col: 3
+					}
+				},
+				//"Z"形
+				{
+					0: {
+						row: 0,
+						col: 0
+					},
+					1: {
+						row: 0,
+						col: 1
+					},
+					2: {
+						row: 1,
+						col: 1
+					},
+					3: {
+						row: 1,
+						col: 2
+					}
+				},
+				//反"Z"形
+				{
+					0: {
+						row: 0,
+						col: 1
+					},
+					1: {
+						row: 0,
+						col: 2
+					},
+					2: {
+						row: 1,
+						col: 1
+					},
+					3: {
+						row: 1,
+						col: 0
+					}
+				}
+			]
+			//var currentModel=models[0]
+			//此处选取models[0]假定其为随机刷新的图形，
+			//遍历伪数组models[0]的所有项来创建出构建该俄罗斯方块形状需要的所有小方格,并且在入口函数中调用
+			function createModel() {
+				for (var key in models[0]) {
+					var littleDiv = document.createElement("div");
+					littleDiv.className = "activity_model"
+					document.getElementById("container").appendChild(littleDiv);
+				}
+				locationBlocks(); //创建块元素后进行定位来构成图形
+			}
+			//定位每一个littleDiv来构成一个俄罗斯方块图形
+			function locationBlocks() {
+				//1.拿到所有的块元素
+				var eles = document.getElementsByClassName("activity_model");
+				for (var i = 0; i < eles.length; i++) { //遍历得到每一个块元素
+					//2.找到每个块元素的定位数据
+					var activity_model_ele = eles[i];
+					//3.根据定位数据来定位
+					//var blockModel =//此处选取models[0]假定其为随机刷新的图形，[i];
+					eles[i].style.top = models[0][i].row * step + "px"; //
+					eles[i].style.left = models[0][i].col * step + "px";
+				}
+			}
+		</script>
+	</head>
+	<body onload="init()">
+		<div id="container"></div>
+	</body>
+</html>

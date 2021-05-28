@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//math对象常用的几个方法
+			var a = Math.ceil(1.235);//对一个数向上去整
+			var b = Math.floor(1.833);//对一个数向下去整
+			var c = Math.round(1.233);//对一个数四舍五入
+			console.log(a);
+			console.log(b);
+			console.log(c);
+			
+			
+			var d = Math.random();//随机生成1个0-1之间的数
+			var e = Math.random()*10;//随机生成1个0-10之间的数
+			var f = Math.round(Math.random()*10);//随机生成1个0-10之间的整数
+			console.log(d);
+			console.log(e);
+			console.log(f);
+			var g = Math.round(Math.random()*y)+x;//随机生成一个从x-y的整数
+			var x = 3;
+			var y = 9;
+			for(i=0;i<10;i++){
+				//console.log(Math.random());
+				//console.log(Math.random()*10);
+				console.log("random="+Math.round(Math.random()*10));
+				console.log(f);//不能这样输出，否则就会输出十个一样的数
+			}//随机生成10个0-10之间的整数
+			
+			
+			//Math.max和Math.min方法获取最大值或最小值
+			var arr = [1,2,3,8,9,6,5,4];
+			//var max =Math.max(arr);//NaN,不能直接对数组进行操作,可对数字直接进行操作
+			var max =Math.max(1,2,3,8,9,6,5,4);
+			//var max = Math.max.apply({},arr);//对数组进行Math.max方法求最大值的书写格式,{}指任意对象,例如可以将其替换为Math
+			console.log(max);
+			
+			//Math.pow(x,y),返回x的y次幂
+			var pow1 = Math.pow(2,3)
+			console.log(pow1);
+			
+			//Math.sqrt()开方
+			var sqrt1 = Math.sqrt(4);
+			console.log(sqrt1);
+		</script>,
+	</body>
+</html>

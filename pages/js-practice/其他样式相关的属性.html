@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#box1 {
+				padding: 20px;
+				background-color: #bfa;
+			}
+
+			#box2 {
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				padding: 10px;
+				border: 5px #000000 solid;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var btn01 = document.getElementById("btn01");
+				var box1 = document.getElementById("box1");
+				var box1 = document.getElementById("box2");
+				btn01.onclick = function() {
+					console.log("box2.clientWidth=" + box2.clientWidth); //元素可见宽度：内容区宽度+左右内边距
+					console.log("box2.clientHeight=" + box2.clientHeight); //元素可见高度：内容区高度+上下内边距
+					console.log("box2.offsetWidth=" + box2.offsetWidth); //元素宽度：内容区宽度+左右内边距+左右边框
+					console.log("box2.offsetHeight=" + box2.offsetHeight); //元素高度：内容区高度+上下内边距+上下边框
+					alert(box2.offsetParent); //获取距离最近的开启定位的祖先元素
+					alert(box2.offsetParent.id);
+					console.log(box2.offsetTop); //box2相对于最近的开启定位的祖先元素（即offsetParent）的垂直偏移量
+					console.log(box2.offsetLeft); //box2相对于最近的开启定位的祖先元素（即offsetParent）的水平偏移量
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<button type="button" id="btn01">点我一下</button>
+		<!-- 对box1开启定位-->
+		<div id="box1" style="position: relative">
+			<div id="box2"></div>
+		</div>
+	</body>
+</html>

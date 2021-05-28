@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			*match(),找到字符串中一个或者多个正则表达式的匹配，并返回一个包含所有匹配内容的数组
+			*注意：
+			* 正则表达式内容中是否有全局匹配模式g会影响match()方法的执行结果，
+			* 若没有g时，match()会只对字符串执行一次匹配并返回第一次匹配到的匹配项，没有则返回null
+			*  （但该方法比有g时返回的数组中会多index和input两个属性）
+			* 若有g时，match()则会对字符串执行多次匹配并返回包含所有匹配项的数组，没有则返回null
+			*/
+			var str = "1 plus 2 equal 3 ";
+			document.write(str.match(/\d/g));//输出str字符串内的所有数字
+			result = str.match(/\d/g);
+			console.log(Array.isArray(result));//ture,match()方法返回的是包含所有正则表达式匹配项的数组
+			
+			/*
+			*split()方法，把字符串分割为字符串数组，即将字符串按要求分割为多个字符串并将其封装在一个数组中
+			* 注意：
+			* 该方法默认进行全局匹配g
+			*/
+			var str1 = "abcdefgh";
+			result1 = str1.split(/e/);
+			console.log(result1);//["abcd","fgh"]
+			result2 = str1.split("");//将字符串内的每个字符都分割
+			console.log(result2);//["a","b","c","d","e","f","g","h"]
+			result3 = str1.split("",3);//3用于指定返回数组的最大长度
+			console.log(result3);//["a","b","c"]
+			
+			/*
+			*search()方法，检索与正则表达式相匹配的值，返回的是匹配项的的起始位置，没有则返回-1，
+			*与index of()有相似之处
+			* 注意：
+			* search() 方法不执行全局匹配，它将忽略标志 g。
+			* 它同时忽略 regexp 的 lastIndex 属性，并且总是从字符串的开始进行检索，
+			* 这意味着它总是返回 stringObject 的第一个匹配的位置。
+			*/
+			var str2 = "hello nihao hi ";
+			result4 = str2.search(/l/);
+			console.log(result4);//2，
+			
+			/*
+			*replace()方法，找到并替换与正则表达式或字符串匹配的值，并返回一个新的字符串
+			* 
+			*/
+			var str3 = "1a2b3c4d5f6g7h8i9JABC";
+			result5 = str3.replace(/[a-z]/ig,"");//正则表达式方法，在忽略大小写和在全局匹配模式下用替换掉所有字母
+			console.log(result5);//123456789
+			result6 = str3.replace("ABC","");//字符串方法，替换与字符串匹配的内容
+			console.log(result6);
+			
+			
+			var name = "John, Deo";
+			result7 = name.replace(/(\w+)\s*,\s*(\w+)/g,"$2 $1");//将名字调换
+			console.log(result7);
+			console.log(name.match(/(\w+)\s*/g));
+			console.log(name.match(/\s*(\w+)/g));
+			console.log(name.match(/(\w+)\s*,\s*(\w+)/g));
+		</script>
+	</body>
+</html>

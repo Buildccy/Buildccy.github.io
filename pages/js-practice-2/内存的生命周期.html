@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/*内存（通电后储存数据的空间）的生命周期--js引擎如何管理内存
+			 *全局变量被声明后一直存在于内存中，直到网页被关闭
+			 *局部变量在函数执行后自动释放，而变量的内容成为垃圾对象，在之后被垃圾回收器回收
+			 */
+			
+			
+			/*
+			*函数的原型
+			* 函数的prototype属性（显式原型）在定义函数时自动添加的，是一个空的Object对象（Fun.prototype={}）
+			* 函数实例的__proto__属性（隐式原型），在创建对象时自动添加，默认值为对应函数的prototype属性值(this.__proto__=Fun.prototype)
+			* 在es6之前程序员只能操作显式原型，隐式原型是只读的
+			*/
+		   
+		   /*
+		   1.函数的显式原型prototype指向的对象默认是空Object对象的实例（但Object不满足）
+		   2.所有函数都是Function的实例（包括Function本身）
+		   3.Object的原型对象是源型链的尽头，值为null
+		   */
+		  /**
+		   * 1.读取对象属性时，会优先在对象自身的属性中找，找不到时再去源型链中找
+		   * 2.给对象添加属性时，直接添加给对象自身的属性在各实例之间不会共享，添加到源型链中的属性和方法则会共享
+		   * 3.方法一般定义在原型中，属性一般直接添加到对象本身
+		   * */
+		 //  console.log(Object.prototype.__proto__)//null
+			// var a = function() {}
+			// a.prototype.test = function() {
+			// 		alert(test)
+			// }
+			// 		console.log(a)
+			// 		console.log(a.prototype)
+			// 		var b=new a
+			// 		console.log(b.__proto__)
+			// 		console.log(a.prototype===b.__proto__);
+			var Obj=function(){};
+			var obj=new Obj;
+			/**
+			 * a instanceof b   判断a是否为b的实例
+			 * a沿着__proto__向上，判断两者最后是否沿着源型链汇合
+			 * */
+			 /* console.log(obj)
+			 console.log(Obj)
+			 console.log(Function)
+			console.log(obj instanceof Obj);//true,obj.__proto_>>>Obj.prototype>>>Object.prototype
+			console.log(obj instanceof Object);//true，obj.__proto_>>>Obj.prototype>>>Object.prototype，
+			console.log(obj instanceof Function);//false，Obj的实例对象obj不是Function的实例：obj.__proto__>>>Obj.prototype>>>Object.prototype，   
+			console.log(Obj instanceof Function)//true，Obj本身是Function的实例：Obj.__proto__>>>Function.prototype>>>Object.prototype
+			 */
+			
+			
+			/* 关于Object和Function */
+			/*Object
+			 实例的隐式原型属性__proto__是一个空的object对象，而这个对象其实是Object原型对象的实例，这个Object原型对象包含了浏览器默认设置好的多种方法 
+			 Function
+			 所有构造器都是Function的实例，即 构造函数的__proto__指向的是Function的prototype
+			 */
+			function a (){
+				Function.prototype.b=function(){}
+				Object.prototype.d=function(){}
+				a.prototype.e=function(){}
+			}
+			console.log(a.__proto__===Function.prototype)
+			/* var f=function(){}
+			var c =new a;
+			f.d() */
+			var c =new a;
+			console.log(a.prototype)
+			console.log(c.__proto__)
+			a.b()
+			a.__proto__.b()
+			/* c.b() //报错*/
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

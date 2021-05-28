@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>操作内联样式练习</title>
+		<style>
+			#box1{
+				width: 12.5rem;
+				height: 12.5rem;
+				background-color: #bfa;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var btn01 = document.getElementById("btn01");
+				var box1 = document.getElementById("box1");
+				btn01.onclick=function(){
+					/*
+					*一.
+					* 通过js修改样式：元素.style.样式名 = "样式值"
+					* 使用style属性修改的样式都是内联样式，
+					* 内联样式具有较高的优先级，修改完后往往会立即显示
+					* 但要注意在css里！important的使用会使其具有最高优先级，
+					* 此时无法通过js修改的内联样式来实现覆盖
+					*/
+					box1.style.width="300px";
+					box1.style.height="300px";
+					//注意：使用js代码修改样式时，不能准确识别-,
+					//如background-color,此时应该去掉-并用驼峰命名法来代替
+					box1.style.backgroundColor="red";
+				}
+				
+				/**
+				 * 二.
+				 * 使用js读取内联样式：元素.style.样式名
+				 */
+				var btn02 = document.getElementById("btn02");
+				btn02.onclick = function(){
+					//读取内联样式
+					alert(box1.style.width);
+				}
+				/*
+				 *使用style属性修改和读取的都是内联样式
+				 * 使用 getComputedStyle(元素,null).属性名 的方法可以读取
+				 * ie9及以上的浏览器的全部样式
+				 */
+			
+				/*三.
+				*读取所有样式的方法:getComputedStyle(元素,null).样式名 
+				* 此方法适用于ie9及以上的浏览器
+				*/
+			   var btn03 = document.getElementById("btn03");
+				btn03.onclick = function(){
+				alert(getComputedStyle(box1,null).width);
+				alert(getComputedStyle(box1,null).backgroundColor);
+				}
+				/*四.
+				 *ie8及以下浏览器采用currentStyle方法读取样式：
+				 * 元素.currentStyle.样式名
+				 */
+				//alert(box1.currentStyle.width);
+				
+				/*五.
+				*适用于所有浏览器的读取样式方法
+				*定义一个函数，用来获取函数当前的样式
+				* 参数 
+				* obj：要获取样式的元素
+				* name：要获取的样式名
+				*/
+				function getStyle(obj,name){
+					//getComputedStyle作为方法在ie8里会报错，但作为window的属性在ie8里为undefined不会报错
+					if(window.getComputedStyle){
+						return getComputedStyle(obj,null)[name];
+					}else{
+						return obj.currentStyle.name;
+					}
+					/*或：
+					return window.getComputedStyle?getComputedStyle(obj,null)[name]:obj.currentStyle.name;
+					*/
+				}
+				var btn04 = document.getElementById("btn04");
+				btn04.onclick=function(){
+					alert(getStyle(box1,"width"));
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box1"></div>
+		<button type="button" id="btn01">点击按钮</button>
+		<button id="btn02">点击按钮2</button>
+		<button id="btn03">点击按钮3</button>
+		<button id="btn04">点击按钮4</button>
+	</body>
+</html>

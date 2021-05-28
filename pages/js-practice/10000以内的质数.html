@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+			console.time("jishiqi");
+			for(var a = 2 ; a < 10000 ; a++){
+				var flag = true;
+				for(var b = 2; b < a; b++){
+					 if(a%b == 0){
+						 flag = false;
+					 }
+				}
+				if(flag){
+					//document.write(a+"<br />");
+				}
+			}
+			console.timeEnd("jishiqi");
+			
+			
+		</script>
+		
+		
+	</body>
+</html>

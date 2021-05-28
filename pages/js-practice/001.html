@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+			var score = prompt("请输入小明的期末成绩（百分制）")
+			if(score > 100 || score < 0|| isNaN(score)){
+				alert("输入值不合法，请在区间内输入")
+			}
+			else{if(score == 100){
+					alert('奖励一辆"BMW"');
+				}else if(score <= 99 && score > 80){
+					alert('奖励一台iphone15s');
+				}else if(score <= 80 && score > 60){
+					alert('奖励一本参考书');
+				}else (score <= 60);
+			}
+		</script>
+		
+	</body>
+</html>

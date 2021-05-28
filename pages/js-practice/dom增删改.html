@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			window.onload=function(){
+				//创建一个广州节点添加到"city"下，此方法只相当于在原来的节点上增加一个节点，输出冗余但影响较小
+				myClick("btn01",function(){
+					var li = document.createElement("li");
+					var gztext = document.createTextNode("广州");
+					li.appendChild(gztext);
+					console.log(li);
+					var city =document.getElementById("city");
+					city.appendChild(li);
+				});
+				
+				
+				
+				//使用另一种方法创建一个广州节点添加到"city"下，此方法将整个city节点重新输出，输出简洁但影响较大
+				myClick("btn03",function(){
+					var city = document.getElementById("city");
+					city.innerHTML += "<li>广州</li>"
+				});
+				
+				//综合上面两种方法用一种综合方法来增加一个广州节点到“city”下，是输出简洁，且影响最小
+				myClick("btn04",function(){
+					var li = document.createElement("li");
+					var city = document.getElementById("city");
+					li.innerHTML = "广州";
+					city.appendChild(li);
+				});
+				
+				//删除北京节点
+				myClick("btn02",function(){
+					var bj = document.getElementById("bj");
+					var city =document.getElementById("city");
+					bj.parentNode.removeChild(bj);
+					
+				});
+				
+				//替换北京节点为南京节点
+				myClick("btn05",function(){
+					var bj = document.getElementById("bj");
+					var city =document.getElementById("city");
+					var li = document.createElement("li");
+					li.innerHTML = "南京";
+					city.replaceChild(li,bj);
+				});
+				
+			}
+			function myClick(idStr,fun){
+				var btn = document.getElementById(idStr);
+				btn.onclick = fun;
+			}
+		</script>
+		<div id="total">
+			<div class="inner">
+				
+				<p>你最喜欢那个城市</p>
+				<ul id="city">
+					<li id="bj">北京</li>
+					<li>上海</li>
+					<li>东京</li>
+					<li>首尔</li>
+				</ul>
+				<button id=btn01 type="button">创建一个广州节点添加到"city"下</button>
+				<button id=btn02 type="button">删除北京节点</button>
+				<button id=btn03 type="button">使用另一种方法创建一个广州节点添加到"city"下</button>
+				<button id=btn04 type="button">使用综合方法创建一个广州节点添加到"city"下</button>
+				<button id=btn05 type="button">替换北京节点为南京节点</button>
+				
+			</div>
+			
+		</div>
+	</body>
+</html>

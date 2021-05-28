@@ -1,0 +1,279 @@
+/* 清除默认样式 */
+body{
+	width: 1903px;
+	height: 338.75rem;
+	background-color: white;
+
+}
+input,a,ul,li{
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+}
+/* 设置页面头部样式 */
+.header{
+	width: 1138px;
+	height: 99px;
+	background-color: #FFFFFF;
+	margin: 0 auto;
+	padding: 0 24px 0 28px;
+}
+/* 对全局中设置浮动的clearfix类消除高度塌陷问题 */
+.clearfix::after,
+.clearfix::before{
+	content: "";
+	display: table;
+	clear: both;
+
+	
+}
+/* 设置左上角logo的样式 */
+.header #a1{
+	float: left;
+	width: 159px;
+	height: 78px;
+	background-image: url(../img/logo.jpg);
+}
+/* 设置右上角广告的样式 */
+.header #a2{
+	float: right;
+	width: 181px;
+	height: 65px;
+	background-image: url(../img/logo2.jpg);
+}
+/* 设置中上区域的浮动 */
+.header .midheader{
+	float: left;
+	margin-left: 44px;
+}
+/* 设置搜索栏样式 */
+.header #search{
+	width: 684px;
+	border: 3px #f03726 solid;
+	/* float: left; */
+	border: 3px red solid;
+	
+}
+/* 设置搜索框样式及消除默认边框 */
+.mui-input-clear{
+	width: 592px;
+	height: 34px;
+	border: 0;
+	background-color: #FFFFFF;
+	
+	/* outline: none; */
+}
+/* 设置搜索按钮样式和消除默认边框 */
+#ccy{
+	width: 92px;
+	height: 34px;
+	border: 0;
+	background-color: #f03726;
+	/* outline: none; */
+	color: #f5f5f2;
+	font-size: 18px;
+}
+/* 设置浮动使搜索框与按钮同行显示 */
+div input{
+	/* height: 40px; */
+	float: left;
+}
+#hotwords a{
+	float: left;
+	margin: 11px 10px;
+	font-size: 12px;
+}
+
+
+/* ------------------以上为header样式，以下为neck样式---------------------------- */
+
+/* 设置neck样式 */
+.neck{
+	height: 36px;
+	background-color: #fd3f31;
+/* 	border-top: 5px #fd3f31 solid; */
+}
+/* 统一设置neck内超链接相同的样式 并使超链接垂直居中*/
+.neck a{
+	font-size: 14px;
+	color: #FFFFFF;
+	line-height: 36px;
+}
+/* 分别设置超链接不同的外边距 */
+#n-a1{
+	margin: 0 76px 0 429px;
+}
+#n-a2,#n-a3,#n-a4{
+	margin-right: 65px;
+}
+
+/* -----------------------上neck，下lef-tblock---------------------------------- */
+
+/* left-block样式，未指定高度和高度，设定边框后默认被left-littleblock撑开 */
+.left-block{
+/* 	width: 240px;
+	height: 528px; */
+	border: 1px #fd3f31 solid;
+	border-top: none;
+	float: left;
+	margin-left: 357px;
+}
+.left-littleblock{
+	width: 232px;
+	height: 37px;
+	border-bottom: 1px #EEEEEE solid;
+	padding: 14px 0 14px 8px;
+}
+/* 图片超链接left-pics设置了内联样式 */
+.left-hotwords{
+	float: right;
+	width: 189px;
+}
+.left-hotwords a{
+	font-size: 11px;
+	margin-right: 15px;
+	white-space: nowrap;
+	color: #bababa;
+}
+
+/* ------------------------上为left-block，下为mid-block-------------------------------- */
+
+.mid-block{
+	width: 690px;
+	height: 528px;
+	margin: 0 10px 0 8px;
+	float: left;
+}
+.ad01{
+	width: 520px;
+	float: left;
+	margin-right: 10px;
+	
+}
+
+.ad01-01{
+	width: 520px;
+	height: 312px;
+	background-color: green;
+	float: left;
+	background-image: url(../img/mid-blockpics/ad01-01.jpg);
+	margin-bottom: 12px;
+}
+.ad01-02{
+	width: 255px;
+	height: 204px;
+	background-color: red;
+	float: left;
+	background-image: url(../img/mid-blockpics/ad01-02.jpg);
+	margin-right: 9px;
+}
+.ad01-03{
+	width: 255px;
+	height: 204px;
+	background-color: yellow;
+	float: left;
+	background-image: url(../img/mid-blockpics/ad01-03.jpg);
+}
+.ad02{
+	width: 160px;
+	float: left;
+	/* margin-left: 10px; */
+}
+.ad02-01{
+	width: 160px;
+	height: 280px;
+	background-color: white;
+	float: left;
+	background-image: url(../img/mid-blockpics/ad02-01.jpg);
+	margin-bottom: 10px;
+	
+}
+.ad02-02{
+	width: 160px;
+	height: 238px;
+	background-color: blue;
+	float: left;
+	background-image: url(../img/mid-blockpics/ad02-02.jpg);
+}
+
+/*------------------------------------- 上为mid-block，下位right-block---------------------------------- */
+.right-block{
+	width: 240;
+	float: left;
+}
+.righttop-block{
+	width: 240px;
+	margin-top: 10px;
+}
+.rightpics01{
+	width: 238px;
+	height: 30px;
+	border: 1px 1px 0 1px;
+	background-image: url(../img/right-blockpics/rightpics01.gif);
+	float: left;
+}
+.rightpics{
+	width: 118px;
+	height: 61px;
+	border: 1px #EEEEEE solid;
+	float: left;
+}
+.rightpics02{
+	background-image: url(../img/right-blockpics/rightpics02.gif);
+}
+.rightpics03{
+	background-image: url(../img/right-blockpics/rightpics03.gif);
+}
+.rightpics04{
+	background-image: url(../img/right-blockpics/rightpics04.gif);
+}
+.rightpics05{
+	background-image: url(../img/right-blockpics/rightpics05.gif);
+}
+.rightpics06{
+	background-image: url(../img/right-blockpics/rightpics06.gif);
+}
+.rightpics07{
+	background-image: url(../img/right-blockpics/rightpics07.gif);
+}
+.rightpics08{
+	background-image: url(../img/right-blockpics/rightpics08.gif);
+}
+.rightpics09{
+	background-image: url(../img/right-blockpics/rightpics09.gif);
+}
+
+/*-------------------------- 上为right-block，下位rightbotton-block -------------------------------*/
+
+/* .rightbotton-block{
+	width: 238px;
+	height: 236px;
+	border: 1px #EEEEEE solid;
+} */
+.rightbotton-block ul{
+	width: 239px;
+	height: 236px;
+	border: 1px #EEEEEE solid;
+	list-style: none;
+	padding: 0;
+	margin-top: 10px;
+}
+/* 这里在img与文本始终不对齐，有待进一步解决 */
+.rightbotton-block li{
+	display: block;
+	height: 24PX;
+	margin-top: 20px;
+}
+.rightbotton-block img{
+	width: 28px;
+	height: 20px;
+	padding: 2PX 0;
+	float: left;
+}
+.rightbotton-block li a{
+	display: block;
+	font-size: 11px/24px;
+	float: left;
+	
+	
+}

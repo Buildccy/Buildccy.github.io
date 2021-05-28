@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+
+		<style type="text/css">
+			*{
+				box-sizing: border-box;
+				border: 0;
+			}
+			body{
+				background:url(http://n.sinaimg.cn/sinacn10101/492/w1920h972/20190417/61e3-hvvuiym6454608.jpg)
+				no-repeat fixed;
+			}
+			.container{
+				width: 100%;
+				margin: 10px auto 0;
+				background: rgba(0,0,128,0.5);
+				color:#FFFFFF;
+				/* text-align: cen 0.5ter; */
+			}
+			@media (min-height:576px) {
+				.container{max-width: 540px;}
+			}
+			@media (min-width:768px) {
+				.container{max-width: 720px;}
+			}
+			form {
+				/* width: 50%; */
+				padding: 20px;
+				
+			}
+			.header{
+				text-align: center;
+			}
+			.form-part{
+				width: 100%;
+				margin: 20px auto;
+				font-size: 20px;
+			}
+			label{
+				display:block;
+				margin-bottom: 5px;
+			}
+			#name{
+				width: 100%;
+				line-height: 32px;
+				border-radius: 5px;
+				font-size: 18px;
+				color: dimgrey;
+			}
+			#email{
+				width: 100%;
+				line-height: 32px;
+				border-radius: 5px;
+				font-size: 18px;
+				color: dimgrey;
+			}
+			#number{
+				width: 100%;
+				line-height: 32px;
+				border-radius: 5px;
+				font-size: 18px;
+				color: dimgrey;
+				
+			}
+			#number::-webkit-outer-spin-button{appearance: none;}
+			#number::-webkit-inner-spin-button{appearance: none;}
+			#age{
+				width: 100%;
+				line-height: 32px;
+				border-radius: 5px;
+				font-size: 18px;
+				color: dimgrey;
+			}
+			select{
+				width: 100%;
+				height: 34px;
+				border-radius: 5px;
+				font-size: 18px;
+				color: dimgrey;
+			}
+			option{
+				height: 38px;
+				font-size: 18px;
+			}
+			textarea {
+				width: 100%;
+				min-height: 120px;
+				padding: 10px;
+				resize: vertical;
+				border-radius: 5px;
+			}
+			#submit{
+				height: 38px;
+				padding: 4px ;
+				border-radius: 5px;
+				width: 100%;
+				background: #37af65;
+				font-size: 20px;
+				color: white;
+			}
+			#submit:hover{
+				box-shadow: 5px 5px 5px #FFFF00;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+			<h1 id="tittle">Survey Form</h1>
+			<p id="description">There is description</p>
+			</div>
+			<form action="#" method="post" id="survey-form">
+				<div class="form-part">
+					<label for="name" id="name-label">Name</label>
+					<input type="text" name="username" id="name" placeholder="请输入用户名" required="required"/>
+				</div>
+				<div class="form-part">
+					<label for="email" id="email-label">Email</label>
+					<input type="email" name="useremail" id="email" placeholder="请输入你的邮箱地址" required="required"/>
+				</div>
+				<div class="form-part">
+					<label for="number" id="number-label">Number</label>
+					<input type="number" min="11111111111" max="99999999999" maxlength="11" name="usernumber" id="number" placeholder="请输入你的联系方式" required="required"/>
+				</div>
+				<div class="form-part">
+					<label for="age" id="age-label">Age</label>
+					<input type="number" min="10" max="120" maxlength="3" name="userage" id="age" placeholder="请输入你的年龄" required="required"/>
+				</div>
+				<div class="form-part">
+					<label>选择你接下来的晋级之路</label>
+					<select name="dropdown" id="dropdown">
+						<option value ="choice" disabled="disabled">从下面几个选项中选择一个晋级路线</option>
+						<option value="choice1">研究僧</option>
+						<option value="choice2">大官人</option>
+						<option value="choice3">程序员</option>
+						<option value="choice3">搬砖佬</option>
+						<option value="choice3">博物馆馆长</option>
+						<option value="choice3">认程常银当爸爸以后跟着他混</option>
+						<option value="choice3">认作程常银儿子以后带着他混</option>
+					</select>
+				</div>
+				<div class="form-part">
+					<label>选择你认为最帅的人</label>
+					<input type="radio" name="person" value="彭于晏" />彭于晏
+					<input type="radio" name="person" value="刘明金" />刘明金
+					<input type="radio" name="person" value="吴彦祖" />吴彦祖
+					<input type="radio" name="person" value="程常银" />程常银
+					<input type="radio" name="person" value="周杰伦" />周杰伦
+				</div>
+				<div class="form-part">
+					<label>目前发表了几篇sci</label>
+					<input type="checkbox" name="rich1" value="一道两篇" />一道两篇
+					<input type="checkbox" name="rich2" value="三到十篇" />三到十篇
+					<input type="checkbox" name="rich3" value="十篇以上" />十篇以上
+					<input type="checkbox" name="rich3" value="无可奉告" />无可奉告
+				</div>
+				<div class="form-part">
+					<p>请如实填写你对程常银先生的评价</p>
+					<textarea placeholder="请认真填写不少于三百字..." required="required">
+
+				</textarea>
+				</div>
+				<div class="form-part">
+					<input type="submit" name="my-form" id="submit" value="提交" />
+				</div>
+			</form>
+		</div>
+		<script type="text/javascript" src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+	</body>
+</html>

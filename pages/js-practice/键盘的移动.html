@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#box1 {
+				width: 100px;
+				height: 100px;
+				background-color: #00FFFF;
+				position: absolute;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var box1 = document.getElementById("box1");
+				document.onkeydown = function(event) {
+					event = event || window.event;
+					//console.log(event.keyCode);//左37，上38，右39，下40
+					switch (event.keyCode) {
+						case 37:
+							box1.style.left = box1.offsetLeft - 10 + "px";
+							break;
+						case 38:
+							box1.style.top = box1.offsetTop - 10 + "px";
+							break;
+						case 39:
+							box1.style.left = box1.offsetLeft + 10 + "px";
+							break;
+						case 40:
+							box1.style.top = box1.offsetTop + 10 + "px";
+						default:
+							break;
+					}
+				}
+
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box1"></div>
+	</body>
+</html>

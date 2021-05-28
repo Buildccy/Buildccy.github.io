@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			var a = 10; 
+			{
+				function hello() {
+					/*由于是在hello函数内，属于非执行级代码块，所以①覆盖已经实现声明的函数a即②，
+					*接着③覆盖①
+					*/
+					a = 99;//①
+					console.log(a);//99
+					function a() {}//②
+					console.log(a);//99
+					a = 30; //③
+					console.log(a);//30
+				}
+				hello();
+			}
+			console.log(a);//10
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<ul id="app">
+			<li v-for="(item,index) in about">{{index}}{{item}}{{item.name}}</li>
+			<li v-for="(item,name,index) in other">{{index}}.{{name}}:{{item}}</li>
+			<a href="#"  v-for="item in other">{{item}} <br></a><hr>
+		</ul>
+		<div id="app2">
+			<p><span v-html="ahtml">这段文字将被替换</span></p>
+		</div>
+		
+		
+		<script>
+			
+			
+			var app=new Vue({
+				el:'#app',
+				data:{
+					about:[
+						{name:"jack"},
+						{name:"bob"},
+						{name:"tom"},
+						{age:22},
+						{job:"IT"}
+					],
+					other:{thing:'dojob',
+					dream:'money'}
+				}
+			})
+			
+			var app2=new Vue({
+				el:'#app2',
+				data:{
+					ahtml:'<span  style="color:red" >之前的内容被替换了</span>'
+				}
+			})
+			
+		</script>
+	</body>
+</html>

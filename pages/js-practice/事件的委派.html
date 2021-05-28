@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function() {
+				var btn01 = document.getElementById("btn01");
+				var u1 = document.getElementById("u1"); //注意：是u1不是ul
+				btn01.onclick = function() {
+					var li = document.createElement("li");
+					li.innerHTML = "<a href='javascript:;' class='link'>一个新的超链接</a>";
+					u1.appendChild(li);
+				}
+				
+				/*事件的委派
+				 * 当我们希望只绑定一次事件，就可以应用到多个元素上，即使元素是后续添加的
+				 * 这时我们可以对其父元素进行绑定，利用事件的冒泡的原理，
+				 * 通过父元素来对其子元素委派相同的事件
+				 */
+				u1.onclick = function(event) {
+					alert("u1的单击响应函数");
+				}
+				
+				/**
+				 *在上述情况下，确实肯以实现对多个元素委派同一事件，
+				 * 但是为了区分是由不同的元素触发的，这时需要用到另一个event事件
+				 * event.target
+				 * target指向触发事件的元素
+				 */
+				u1.onclick=function(event){
+					
+					if(event.target.className=="link"){
+						alert(event.target.innerHTML);
+					}
+				}
+			}
+			
+
+			
+		</script>
+	</head>
+	<body>
+		<button type="button" id="btn01">点击添加一个超链接</button>
+		<ul id="u1">
+			<li><a href="javascript:;" class="link">一个超链接</a></li>
+			<li><a href="javascript:;" class="link">一个超链接</a></li>
+			<li><a href="javascript:;" class="link">一个超链接</a></li>
+		</ul>
+	</body>
+</html>

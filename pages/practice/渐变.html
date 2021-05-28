@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/*little-div是使top与mid的width一致的关键*/
+			#little-div {
+				position: relative;
+				overflow: hidden;
+				/* width: 100%; */
+				height: 2000px;
+			}
+
+			#top {
+				width: 100%;
+				height: 200px;
+				border-radius: 20px;
+				background: linear-gradient(35deg, #ccffff, #ffcccc);
+				/* box-shadow: 10px 10px 5px antiquewhite; */
+				padding-top: 30px;
+			}
+
+			h1 {
+				text-align: center;
+				font-family: "franklin gothic demi";
+				font-size: 60px;
+			}
+
+			#logo {
+				position: absolute;
+				top: 30px;
+				right: 30px;
+				width: 60px;
+				border-radius: 30px;
+			}
+
+			#slogan {
+				position: absolute;
+				top: 150px;
+				left: 60%;
+				font-size: 20px;
+				font-style: italic;
+			}
+
+			#owner {
+				text-decoration: none;
+			}
+
+			#mid {
+				position: absolute;
+				/* width: 1887px; */
+				width: 100%;
+				/* height: 100%; */
+				border-radius: 20px;
+				background: linear-gradient(0deg, #ccffff 0%, #ccccff 25%, #ffcccc 50%, #ffffcc 75%);
+				margin: 10px auto;
+			}
+
+			.boxes {
+				position: relative;
+				float: left;
+				width: 150px;
+				height: 200px;
+				border: aqua 1px solid;
+				border-radius: 20px;
+				margin: 5px 8px;
+				background: white;
+				z-index: 1;
+				padding-top: 50px;
+			}
+
+			.boxes:hover {
+				transform: scale(1.5) translate(0,50px);
+				z-index: 2;
+			}
+
+			#box1-1 {
+				width: 50px;
+				height: 100px;
+				border: 1px black solid;
+				margin: 0 auto;
+				background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+			}
+
+			#box2-1 {
+				width: 50px;
+				height: 100px;
+				border: 1px black solid;
+				margin: 0 auto;
+				transform: skew(45deg, 30deg);
+				background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+				            linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+				            linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+			}
+
+			#box3-1 {
+				position: relative;
+				top: 30px;
+				left: -10px;
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				margin: 0 auto;
+				box-shadow: 10px 15px 0 0 deepskyblue;
+				background: transparent;
+			}
+
+			#box4-1 {
+				position: relative;
+				top: 40px;
+				width: 50px;
+				height: 50px;
+				background-color: pink;
+				transparent;
+				margin: auto;
+				transform: rotate(-45deg);
+			}
+
+			#box4-1::after {
+				content: "";
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				position: absolute;
+				top: 0px;
+				left: 25px;
+				background-color: pink;
+			}
+
+			#box4-1::before {
+				content: "";
+				height: 50px;
+				width: 50px;
+				border-radius: 50%;
+				position: absolute;
+				top: -25px;
+				left: 0px;
+				background-color: pink;
+			}
+
+			#box5-1 {
+				width: 50px;
+				height: 100px;
+				background: black;
+				margin: auto;
+
+				/* animation-fill-mode:forwards; */
+			}
+
+			#box5-1:hover {
+				animation-name: rainbow;
+				animation-duration: 4s;
+				animation-fill-mode: forwards;
+			}
+
+			@keyframes rainbow {
+
+				/* 				0%{
+					background-color: #ccffff;
+					height: 90px;
+				}
+				25%{
+					background-color: #ccffcc;
+					height: 80px;
+				}
+				50%{
+					background-color:#cfcccc;
+					height: 70px;
+				}
+				75%{
+					background-color:#ffccff;
+					height: 60px;
+				} */
+				100% {
+					background-color: #ffffcc;
+					height: 50px;
+				}
+			}
+
+			#box5-p {
+				font-size: 14px;
+				margin: auto;
+				text-align: center;
+			}
+
+			#box6-1 {
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				background: linear-gradient(35deg, #ccffff, #ffcccc);
+				margin: auto;
+				animation-name: fade;
+				animation-duration: 1.5s;
+				animation-iteration-count: infinite;
+				position: relative;
+				top: 20%;
+				/*设置了百分比的offset-top值之后动画才能连贯顺滑，使用数值可能会使动画跳帧*/
+
+			}
+
+			@keyframes fade {
+				0% {
+					top: 0px;
+				}
+
+				50% {
+					top: 50%;
+					width: 100px;
+					opacity: 0.1;
+				}
+
+				100% {
+					top: 0px;
+				}
+			}
+
+			#box7 {
+				/* background-color:hsl(261,60%,40%) ; */
+				/* background-color:hsl(350,80%,80%); */
+				animation-name: change-bgcolor;
+				animation-duration: 1s;
+				animation-iteration-count: infinite;
+			}
+
+			@keyframes change-bgcolor {
+				0% {
+					background-color: white;
+				}
+
+				50% {
+					background-color: hsl(350, 80%, 80%);
+				}
+			}
+
+			#box7-1 {
+				width: 50px;
+				height: 50px;
+				background: pink;
+				margin: 20% auto;
+				position: relative;
+				transform: rotate(-45deg);
+				animation-name: heart-beat;
+				animation-duration: 1s;
+				animation-iteration-count: infinite;
+			}
+
+			@keyframes heart-beat {
+				0% {
+					transform: rotate(-45deg) scale(1);
+				}
+
+				50% {
+					transform: rotate(-45deg) scale(0.5);
+				}
+
+/* 				100%{
+					transform:rotate(-45deg) scale(1);
+				} */
+			}
+
+			#box7-1::after {
+				content: "";
+				height: 50px;
+				width: 50px;
+				background: pink;
+				position: absolute;
+				left: 25px;
+				border-radius: 50%;
+			}
+
+			#box7-1::before {
+				content: "";
+				height: 50px;
+				width: 50px;
+				background: pink;
+				position: absolute;
+				top: -25px;
+				border-radius: 50%;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div id="top">
+			<h1>Web of ChengChangYin</h1>
+			<p id="slogan">be free to dream and create - - - <a href="#" id="owner">ChengChangYin</a></p>
+			<img src="./pics/屏幕截图%202020-11-26%20152447.png" id="logo" />
+		</div>
+		<div id="little-div">
+			<div id="mid">
+				<div class="boxes" id="box1">
+					<div id="box1-1"></div>
+				</div>
+				<div class="boxes" id="box2">
+					<div id="box2-1"></div>
+				</div>
+				<div class="boxes" id="box3">
+					<div id="box3-1"></div>
+				</div>
+				<div class="boxes" id="box4">
+					<div id="box4-1"></div>
+				</div>
+				<div class="boxes" id="box5">
+					<div id="box5-1"></div>
+					<p id="box5-p">请悬停鼠标查看效果</p>
+				</div>
+				<div class="boxes" id="box6">
+					<div id="box6-1"></div>
+				</div>
+				<div class="boxes" id="box7">
+					<div id="box7-1"></div>
+				</div>
+				<div class="boxes" id="box8"></div>
+				<div class="boxes" id="box9"></div>
+				<div class="boxes" id="box10"></div>
+				<div class="boxes" id="box11"></div>
+			</div>
+		</div>
+	</body>
+</html>

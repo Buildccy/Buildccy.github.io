@@ -1,0 +1,54 @@
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+#mainGaming{
+	width: 34.5rem;
+	height: 46rem;
+	background-color: antiquewhite;
+	margin: 1.25rem auto;
+	display: flex;
+	flex-wrap:wrap;
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	box-sizing: content-box;
+	
+}
+.boxes{
+	width:2.3rem ;
+	height:2.3rem ;
+	background-color: aqua;
+	border-right:1px solid #ccc ;
+	border-bottom:1px solid #ccc ;
+}
+.snake{
+	width:2.3rem ;
+	height:2.3rem ;
+	background-color: brown;
+	border-right:1px solid #ccc ;
+	border-bottom:1px solid #ccc ;
+}
+.food{
+	width:2.3rem ;
+	height:2.3rem ;
+	background-color: yellow;
+	border-right:1px solid #ccc ;
+	border-bottom:1px solid #ccc ;
+}
+#btnDiv{
+	text-align: center;
+}
+#btn1{
+	width: 100px;
+	height: 50px;
+	margin: auto auto;
+	background-color: cadetblue;
+}
+#btn2{
+	width: 100px;
+	height: 50px;
+	margin: auto auto;
+	background-color: cadetblue;
+}

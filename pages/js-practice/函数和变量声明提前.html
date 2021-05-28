@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+			var a = 123;
+			var b = 234;
+			var c = 111;
+			function fun1(){
+				a = 456;
+				var b = 567;
+				console.log("b=" + b);//变量的调用遵循就近原则，本级有则对本级变量进行调用，没用则往上一直找，全局作用域内仍没有的花就报错
+				console.log("c=" + c);//在函数作用域内没有对应变量会向上寻找调用上级的变量
+				var d = 333;
+			}
+			fun1();
+			console.log("a=" + a);//a=456,函数中的变量没有用var关键字声明时默认为全局变量
+			
+			//console.log("d=" + d);//报错，在全局作用域中无法访问函数作用域声明的变量，即无法调用下一级的变量
+		/*变量的调用可以从下往上寻找调用，而不能从上往下寻找调用的原则*/
+		function fun2(e){
+			e = 444;
+		}
+		console.log("e=" + e);//报错，undefined，输入形参就相当于对函数内的变量进行声明，故在函数外无法调用函数内变量的值
+		/*形参就相当于对函数内的变量进行声明*/
+		</script>
+	</body>
+</html>

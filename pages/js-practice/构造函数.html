@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			/*******************************************************
+			*构造函数的执行流程
+			* 1.立刻创建一个新的对象
+			* 2.将新建的对象设置为函数中的this，在构造函数中使用this来引用新建的对象
+			* 3.逐行执行函数中的代码
+			* 4.将新建的对象作为函数值返回（故不需要return）
+			* 其中3是事先声明好的代码，而1、2、4都是在开始调用一个构造函数之后由计算机自动实现
+			* 使用一个构造函数创建的对象，称之为一类对象，也将一个构造函数称之为一个类：per1、per2、per3是一个类，与dog1是不同的类
+			* 将通过一个构造函数创建的对象，称之为该类的实例：per1是Per的实例、dog1是Dog的实例
+			*********************************************************/
+			function Per(name,age,gender){
+				this.name = name;//使用this来限定对象
+				this.age = age;
+				this.gender = gender;
+				this.sayName = fun; /*******优化 // function(){
+					alert(this.name);//逐行执行到函数代码的最后，自动返回整个新建的对象，不需return
+				}*/
+			}
+			function fun(){
+				alert(this.name);
+			}
+			function Dog(name,age){
+				this.name = name;
+				this.age = age;
+			}
+			
+			var per1 = new Per("孙悟空",15,"男");//开始调用构造函数，使用new关键词
+			per1.sayName();
+			var per2 = new Per("猪八戒",25,"男");
+			var per3 = new Per("白骨精",18,"女");
+			var dog1 = new Dog("旺财",3);
+			console.log(per1);//输出per1的对象名字和属性，相较于工厂方法输出的结果只能输出属性，构造函数方法还可以输出对象的名字，即使用构造函数能区分对象，而工厂方法不行
+			console.log(dog1);//输出dog1的对象名字和属性
+			console.log(per1 instanceof Per);//true,判断per1是否为Per的实例
+			console.log(dog1 instanceof Per);//false,判断dog1是否为Per的实例
+			
+			/************************************************
+			*补充this的情况：
+			* 1.当以函数的形式调用时，this就是window
+			* 2.当以方法的形式调用时，谁调用this就是谁
+			* 3.当以构造函数调用时，this就是新创建的对象
+			*************************************************/
+			
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<hecd>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			var a , b , c ;
+
+			var num1 = prompt("请任意输入第一个数");
+			num1 = +num1;//将字符串转换为数值，为后面比较铺垫
+			var num2 = prompt("请任意输入第二个数");
+			num2 = +num2;//将字符串转换为数值，为后面比较铺垫
+			var num3 = prompt("请任意输入第三个数");
+			num3 = +num3;//将字符串转换为数值，为后面比较铺垫
+			if(num1 >= num2 && num1 >= num3){
+				a = num1 ; (num2 >= num3)?(b = num2 , c = num3) : (b = num3 , c = num2)
+			}else if(num2 >= num1 && num2 >= num3){
+				a = num2 ; (num1 > num3)?(b = num1 , c = num3) : (b = num3 , c = num1)
+			}else if(num3 >= num1 && num3 >= num2){ 
+				a = num3 ; (num1 >= num2)?(b = num1 , c = num2) : (b = num2 , c = num1)
+			}
+			console.log(a+">="+b+">="+c);
+			
+			if(a != b && b != c){
+				console.log(a+">"+b+">"+c);//a，b，c 默认转换为字符串
+				alert(a+">"+b+">"+c);
+			}else if( a == b && b != c ){
+				alert(a+"="+b+">"+c);
+			}else if( a != b && b == c ){
+				alert(a+">"+b+"="+c);
+			}else{
+				alert(a+"="+b+"="+c);
+			}
+			
+		</script>
+		
+	</body>
+</html>

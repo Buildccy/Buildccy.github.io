@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button type="button" id=button01>第一页</button>
+		<script type="text/javascript">
+			window.onload=function(){
+				var button01 = document.getElementById("button01");
+				button01.onclick=function(){
+					alert(button01.innerHTML);
+					alert(button01.innerText);
+					alert(button01.nodeType);
+					
+					
+				}
+				var body = document.body;
+				console.log(body);
+				console.log(body.length);
+				alert(body);
+				var all = document.all;
+				console.log(all);
+				console.log(all.length);
+				alert(all);
+				/*
+				*document.querySelector查询并返回第一个符合条件的css标签
+				*/
+				var box1Div = document.querySelector(".box1 div");
+				console.log(box1Div);
+				var box1 =document.querySelector(".box1");
+				console.log(box1.innerHTML);
+				/*
+				*document.querySelectorAll查询并返回满足条件的所有css标签，以一个数组的形式返回
+				 */
+				var boxs = document.querySelectorAll(".box1");
+				console.log(boxs);
+				console.log(boxs.length);
+				
+			}
+		</script>
+		<div class="box1">
+			我是box1
+			<div>
+				我是box1里面的第一个div
+			</div>
+		</div>
+		<div class="box1">
+			<div>
+				我是box1里面的第二个div
+			</div>
+		</div>
+	</body>
+</html>

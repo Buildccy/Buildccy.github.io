@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload=function(){
+				var input=document.getElementsByTagName("input")[0];
+				//键盘事件一般都绑定给可以获取焦点的对象或document;
+				
+				//document.onkeydown或input.onkeydown
+				// input.onkeydown=function(event){
+				// 	event=event||window.event;
+				// 	console.log(event.keyCode);//以前keycode事件不支持火狐，应该有which代替，现在两种方法都支持
+				// 	if(event.keyCode>48&&event.keyCode<56){
+				// 		return false;//阻止浏览器的默认行为会导致input框内无法显示输入的字符内容，此处判断禁止输入数字
+				// 	}
+				// }
+				input.onkeydown=function(event){
+					if(event.keyCode==88&&event.ctrlKey){
+						alert("ctrl和x都被按下了");
+					}
+				
+				}
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+		<input type="text" />
+	</body>
+</html>

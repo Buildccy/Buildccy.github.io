@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.js"></script>
+		<style>
+			div{
+				width: 100px;
+				height: 100px;
+				background-color: #FFCCCC;
+				padding: 10px;
+				border: 10px black solid;
+				margin: 10px;
+			}
+			P{
+				/* padding: 0; */
+				font-size: 32px;
+				font-family: "agency fb" ,"arial black";
+				/* border: 0; */
+				background-color: #DC143C;
+				line-height: 1em;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 		<div id="box">
+			
+		<input id="btn" type="button" value="输入"/><br />
+		<input type="text" id="masg1"/>
+		<input type="text" id="masg2"/>
+		</div>
+
+		<form class="mui-input-group">
+			<div class="mui-input-row">
+				<label>input</label>
+				<input type="text" class="mui-input-clear" placeholder="请输入">
+			</div>
+		</form>
+		<form action="#" method="post">
+			
+			<input type="submit" value=""/>
+		</form>
+		
+		<dl>
+		   <dt>计算机</dst>
+		   <dd>用来计算的仪器 ... ...</dd>
+		   <dt>显示器</dt>
+		   <dd>以视觉方式显示信息的装置 ... ...</dd>
+		</dl>
+		
+		<div id="text" style="width: 100px;height: 200px;overflow: auto;">
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+			z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字z这是一段很长很长很长而且还重复重复再重复的文字
+		</div>
+		<button id="btn1">点击确定scrolltop</button> -->
+		<div>div</div>
+		<ul>
+			<li title="hello">aaaaaaaa</li>
+			<li>bbbbbbbbbbb</li>
+			<li title="hello"> cccccccccc</li>
+		</ul>
+
+		<p>这是一段文字</p>
+		<p id="para">I would like to say: </p><div id="foo">Hello</div>
+		<script type="text/javascript">
+			/* 			$('#btn').click(function(){
+				$('<input type="text" id="masg3"/>'+'<br>').appendTo('div');
+				$('div').append('<input type="text" id="masg3"/>')
+			})
+			var $inp=$('input')
+			console.log($inp.length,$inp.size())
+			console.log($('input').size())
+			console.log($('input').each(function(){console.log(this)}))
+			
+			$('input').each(function(){
+				console.log($(this).index);
+			})
+			console.log($.isArray($().arguments), $.isArray([]));
+			
+			var json='{"name":"jack","age":"12"}';
+			console.log($.parseJSON(json));
+			json='[{"name":"bob","age":"18"},{"name":"tom","age":"21"}]'
+			console.log($.parseJSON(json));
+			
+			//js原生写法
+			// JSON.parse(jsonString);//json字符串转js
+			// JSON.stringify(jsObject/jsArray);//js对象或数组转json字符串
+			
+			
+			
+			$('#btn1').click(function(){
+				console.log($('#text').scrollTop())
+			}) */
+			var $div = $('div')
+			console.log($div.outerHeight(true))
+			$div.outerWidth(300, true)
+			$div.outerHeight(300)
+			console.log($div.outerWidth(true))
+			console.log($div.outerHeight(true))
+
+			$('ul>li').filter('[title=hello]').css('background-color', 'red')
+			console.log($div.selector)
+			
+			
+			
+			//append,appendTo,preprend,prependTo,after,before,insertAfter,insertBefore:插入
+			$("#para").before($("#foo"))
+			$("#para").after($("#foo"))
+			$("#foo").insertBefore($("#para"))
+			
+			//get()方法是将匹配到的元素以数组形式封存的dom对象（不是jquery对象），所以这些对象同样具有dom对象的方法，可以用原生js的方法来操作
+			var divs=$("div").get()
+			console.log(divs)
+			
+			//map()方法
+			var $li =$("li").map(function(){
+				return $(this).html()
+			})
+			console.log($li)
+			
+			var $firstLi=$('ul>li:first').offset()
+			console.log($firstLi)
+		</script>
+		
+	</body>
+</html>

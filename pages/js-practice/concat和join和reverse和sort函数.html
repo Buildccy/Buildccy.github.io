@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//concat()函数，连接数组并返回连接后的数组，不改变原数组
+			var arr1 = ["牛魔王","铁扇公主","红孩儿"];
+			var arr2 = ["孙悟空","猪八戒","沙和尚"];
+			var arr3 = ["白骨精","蜘蛛精","玉兔精"]
+			var result = arr1.concat(arr2,arr3,"唐僧","玉皇大帝");
+			console.log("arr1="+arr1);
+			console.log(result);
+			
+			//join()函数，为数组内的元素拼接为字符串返回，也可以在元素之间添加自定义连接符，不改变原数组
+			var result = arr1.join();
+			console.log("arr1="+arr1);
+			console.log(result);
+			console.log(typeof result);
+			
+			//join()函数中加入自定义连接符并以字符串的形式返回
+			var result = arr2.join("-");
+			console.log("arr2="+arr2);
+			console.log(result);
+			console.log(typeof result);
+			
+			//reverse()函数，颠倒数组并返回，改变原数组
+			var result = arr3.reverse();
+			console.log("arr3="+arr3);
+			console.log(result);
+			
+			//sort()函数，为数组排序，可以加入自定义的回调函数来决定是升序还是降序
+			var arr4 = [8,7,5,9,2,3,1,4];
+			var result = arr4.sort();
+			console.log("arr4="+arr4);
+			console.log(result);
+						
+			//sort中加入回调函数
+			var result = arr4.sort(function(a,b){
+				return a-b;
+			})
+			console.log("arr4="+arr4);
+			console.log(result);
+			
+			var result = arr4.sort(function(a,b){
+				return b-a;
+			})
+			console.log("arr4="+arr4);
+			console.log(result);
+		</script>
+		
+	</body>
+</html>

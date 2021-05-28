@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*根据给定的个人信息表来筛选出满18及以上的人将其封装到一个新的数组中并返回*/
+			function per(name,age){
+				this.name = name;
+				this.age = age;
+				per.prototype.toString = function(){
+					return "per[name是"+this.name+",age是"+this.age+"]"//修改per函数的原型对象的toString方法来重写返回的字符串格式
+				}
+			}
+
+			var result = per.toString();
+			var per1 = new per("孙悟空",18);
+			var per2 = new per("猪八戒",28);
+			var per3 = new per("二郎神",38);
+			var per4 = new per("玉兔精",16);
+			var per5 = new per("红孩儿",8);
+			var arr = [per1,per2,per3,per4,per5];
+			var arrAdult = [];
+			for(i=0;i<arr.length;i++){
+				if(arr[i].age >= 18){
+					arrAdult.push(arr[i])
+				}
+			}
+			console.log(per1);//实质是一个对象
+			console.log(per1.toString());//实质是一个字符串
+			
+			console.log(arr);
+			console.log(arrAdult);//使用默认返回格式返回的arrAdult
+			
+			/*var result = arrAdult.toString();
+			console.log(result);*/
+			console.log(arrAdult.toString());//使用修改后的返回格式返回的arrAdult
+			
+		</script>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			var arr = new Array();
+			arr[1] = 12;
+			arr[2] = 21;
+			arr[3] = 32;
+			arr[21] = 11;
+			console.log(arr);
+			console.log(arr.length);//4，length用来输出数组的长度，但要求数组必须时从0开始的连续的数组，因为在数值上等于最大的数组索引+1
+			arr.length = 30;
+			console.log(arr);//length还可以用来设置数组的长度，当设置的值大于原数组的长度时，多出部分会空出来
+			arr.length = 3;
+			console.log(arr);//当设置的值小于原数组的长度，会删除超出的部分
+			
+			arr[arr.length] = 52;//数组[数组.length]可以在数组最后面向依次添加元素
+			console.log(arr);
+			
+		</script>
+	</body>
+</html>

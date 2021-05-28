@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			{{message}}
+			<span v-bind:title="message">鼠标悬停于此处查看时间</span>
+
+		</div>
+
+		<p id="app2" v-bind:style="{color:whatcolor}" v-html="giveSpan"></p>
+		<div id="app3">
+			<input type="text" v-model="username" />
+			<p>{{username}}</p>
+			<img :src="imgUrl">
+			<input type="button" @click="alertText(username)" value="按钮一" />
+			<input type="button" @click="alertText2" value="按钮二" />
+		</div>
+
+		<script type="text/javascript">
+			var app = new Vue({
+				el: '#app',
+				data: {
+					message: 'hi,现在是：' + new Date().toLocaleString()
+				}
+			})
+			app.$watch('message', function(newval, oldval) {
+				console.log(newval, oldval)
+			})
+			app.message = 'hello,现在时间变为：' + new Date().toLocaleString()
+
+
+			setInterval(function(timing) {
+				timing = new Date().getTime() % 2;
+				timing == 1 ? app2.$data.whatcolor = app2.$data.onecolor : app2.$data.whatcolor = app2.$data.othercolor
+			}, 1000)
+
+			var app2 = new Vue({
+				el: '#app2',
+				data: {
+					word: 'ChengChangYin',
+					giveSpan: '<span>再见了亲爱的梦中女孩</span>',
+					onecolor: 'pink',
+					othercolor: 'skyblue',
+					whatcolor: ''
+				}
+			})
+
+
+
+			var app3 = new Vue({
+				el: '#app3',
+				data: {
+					username: 'hello world',
+					imgUrl: 'https://cn.vuejs.org/images/logo.png'
+				},
+				methods: {
+					alertText(content) {
+						alert(content)
+					},
+					alertText2() {
+						alert("声明固定内容，未传参")
+					}
+				}
+			})
+
+
+
+		</script>
+		<style>
+
+		</style>
+	</body>
+</html>

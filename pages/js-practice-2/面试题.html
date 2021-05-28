@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+
+		<!-- <button type="button">测试1</button>
+		<button type="button">测试2</button>
+		<button type="button">测试3</button>	
+		</script>
+		<script type="text/javascript">
+			// /* 变量提升要优先于函数提升 */
+			// function a (){}
+			// var a 
+			// console.log(typeof a)//undefined
+
+			// function b(){}
+			// var b = 1
+			// console.log(typeof b)//number；代码执行顺序：先声明变量b(undefined)，再声明函数b覆盖变量b，最后在对b重新赋值为数值1
+
+			// var c = 2
+			// function c (c){
+			// 	console.log(c)
+			// }
+			// //c(2)//报错；代码执行顺序：1.声明变量b(undefined) 2.声明函数b覆盖变量b 3.将b赋值为数值2，数据类型重新变为number，所以调用时报错因为b不是一个function
+
+
+			// var obj={
+			// 	fu:function(){
+			// 	console.log(this.fu)
+			// 	console.log(obj.fu)
+			// 	console.log(this.fu==obj.fu)
+			// 	//console.log(fu)
+			// 	}
+			// }
+			// obj.fu()
+
+			//利用闭包来实现循环遍历加监听
+			var btn = document.getElementsByTagName("button")
+			for (var i = 0, length = btn.length; i < length; i++) {
+				(function(i) {
+					btn[i].onclick = function() {
+						alert("这是" + (i + 1) + "按钮")
+					}
+				})(i)
+			}
+
+
+			/* 			function fun1() {
+							var a = 2
+							var b = "abc"
+
+							function fun2() {
+								a++
+								console.log(a)
+							}
+							return fun2
+						}
+						var f = fun1()
+						f()
+						f()
+
+
+						function fun3() {
+							var c = 1
+
+							function fun4() {
+								c++
+								console.log("c=" + c)
+							}
+							fun4()
+							console.log("c++=" + c)
+						}
+						fun3()
+						fun3()
+						var f1 = fun3() //将外部函数fun3的执行结果赋值给f1,使fun3一直暴露给全局，调用没结束，空间没释放
+						console.log(f1 instanceof Object, f1 instanceof Function) */
+
+			/* 			var obj={}
+						for(i=0;i<10000;i++){
+							obj[i]=new Array(1000000)
+							console.log("abc")
+						} */
+			function createPerson(name, age) {
+				var person = {
+					name: name,
+					age: age,
+					setName: function(name) {
+						this.name = name
+					}
+				}
+				return person
+			}
+			var p1 = createPerson("tom", 18)
+			p1.setName("Jack")
+			console.log(p1)
+
+
+			/* function test(){
+			  const testConstant = "测试常量";
+			  alert(testConstant);
+			  testConstant = "改变常量值";
+			}
+			test(); */
+
+			/* var varLocation = "函数外部声明并赋值";
+			function test(){
+			   var  varLocation = "函数内部改值";
+			   alert(varLocation); // 函数内部改值
+			}
+			test();
+			alert(varLocation);  // 函数内部改值 */
+			/* var obj ={
+				a:1,
+				b:function(){
+					console.log(a)
+				},
+				
+			}
+			var a =2
+			obj.b() */
+		</script> -->
+		<style>
+		  .injected-text {
+		    margin-bottom: -25px;
+		    text-align: center;
+		  }
+		
+		  .box {
+		    border-style: solid;
+		    border-color: black;
+		    border-width: 5px;
+		    text-align: center;
+		  }
+		
+		  .yellow-box {
+		    background-color: yellow;
+		    padding: 10px;
+		  }
+		
+		  .red-box {
+		    background-color: crimson;
+		    color: #fff;
+		    padding: 20px;
+		  }
+		
+		  .blue-box {
+		    background-color: blue;
+		    color: #fff;
+		    padding: 10px;
+		  }
+		</style>
+		<h5 class="injected-text">margin</h5>
+		
+		<div class="box yellow-box">
+		  <h5 class="box red-box">padding</h5>
+		  <h5 class="box blue-box">padding</h5>
+		</div>
+	</body>
+</html>
