@@ -6,17 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://Buildccy.github.io">
-  <title>Archives: 2021/4 | Buildccy的个人博客</title>
+  <title>我的第二篇博文 | Buildccy的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个前端菜鸟的进阶之路">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Buildccy的个人博客">
-<meta property="og:url" content="https://buildccy.github.io/archives/2021/04/index.html">
+  <meta name="description" content="（转）　深入理解BFC 定义　　在解释BFC之前，先说一下文档流。我们常说的文档流其实分为定位流、浮动流和普通流三种。而普通流其实就是指BFC中的FC。FC是formatting context的首字母缩写，直译过来是格式化上下文，它是页面中的一块渲染区域，有一套渲染规则，决定了其子元素如何布局，以及和其他元素之间的关系和作用。常见的FC有BFC、IFC，还有GFC和FFC。BFC是block">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的第二篇博文">
+<meta property="og:url" content="https://buildccy.github.io/2021/04/20/BFC%E5%B8%83%E5%B1%80/index.html">
 <meta property="og:site_name" content="Buildccy的个人博客">
-<meta property="og:description" content="一个前端菜鸟的进阶之路">
+<meta property="og:description" content="（转）　深入理解BFC 定义　　在解释BFC之前，先说一下文档流。我们常说的文档流其实分为定位流、浮动流和普通流三种。而普通流其实就是指BFC中的FC。FC是formatting context的首字母缩写，直译过来是格式化上下文，它是页面中的一块渲染区域，有一套渲染规则，决定了其子元素如何布局，以及和其他元素之间的关系和作用。常见的FC有BFC、IFC，还有GFC和FFC。BFC是block">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAoklEQVQ4T+2T4Q2CMBCFv27CBjgCG+gIjAAbOAIjOIJs4Ai6gRvIBpjXXCOp19T/8pJLoTneXcj3Ah91wAV4bu68xwXoAZ2EzEAmE9AWTB6AelRDyaAx9zgh0wE4ATczcTdIE7wl0oe7wX/8RMHigfQTB3fDdM1IEvYyONdIVEOSqDwCY2Z2NaS/UNbqMSQmvauUPlfbNKpBSdTUVyXSs/XyBlRCNBG20I28AAAAAElFTkSuQmCC">
+<meta property="article:published_time" content="2021-04-20T12:46:29.000Z">
+<meta property="article:modified_time" content="2021-06-02T15:02:14.321Z">
 <meta property="article:author" content="Buildccy">
+<meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAoklEQVQ4T+2T4Q2CMBCFv27CBjgCG+gIjAAbOAIjOIJs4Ai6gRvIBpjXXCOp19T/8pJLoTneXcj3Ah91wAV4bu68xwXoAZ2EzEAmE9AWTB6AelRDyaAx9zgh0wE4ATczcTdIE7wl0oe7wX/8RMHigfQTB3fDdM1IEvYyONdIVEOSqDwCY2Z2NaS/UNbqMSQmvauUPlfbNKpBSdTUVyXSs/XyBlRCNBG20I28AAAAAElFTkSuQmCC">
   
     <link rel="alternative" href="/atom.xml" title="Buildccy的个人博客" type="application/atom+xml">
   
@@ -152,36 +157,67 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-BFC布局" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      我的第二篇博文
+    </h1>
+  
+
+        
+        <a href="/2021/04/20/BFC%E5%B8%83%E5%B1%80/" class="archive-article-date">
+  	<time datetime="2021-04-20T12:46:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-20</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>　　（转）　<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiaohuochai/p/5248536.html">深入理解BFC</a><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAoklEQVQ4T+2T4Q2CMBCFv27CBjgCG+gIjAAbOAIjOIJs4Ai6gRvIBpjXXCOp19T/8pJLoTneXcj3Ah91wAV4bu68xwXoAZ2EzEAmE9AWTB6AelRDyaAx9zgh0wE4ATczcTdIE7wl0oe7wX/8RMHigfQTB3fDdM1IEvYyONdIVEOSqDwCY2Z2NaS/UNbqMSQmvauUPlfbNKpBSdTUVyXSs/XyBlRCNBG20I28AAAAAElFTkSuQmCC" alt="img"></p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>　　在解释BFC之前，先说一下文档流。我们常说的文档流其实分为定位流、浮动流和普通流三种。而普通流其实就是指BFC中的FC。FC是formatting context的首字母缩写，直译过来是格式化上下文，它是页面中的一块渲染区域，有一套渲染规则，决定了其子元素如何布局，以及和其他元素之间的关系和作用。常见的FC有BFC、IFC，还有GFC和FFC。BFC是block formatting context，也就是块级格式化上下文，是用于布局块级盒子的一块渲染区域</p>
+<h3 id="触发条件"><a href="#触发条件" class="headerlink" title="触发条件"></a>触发条件</h3><p>　　满足下列条件之一就可触发BFC</p>
+<p>　　【1】根元素，即HTML元素</p>
+<p>　　【2】float的值不为none</p>
+<p>　　【3】overflow的值不为visible</p>
+<p>　　【4】display的值为inline-block、table-cell、table-caption</p>
+<p>　　【5】position的值为absolute或fixed</p>
+<h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>　　BFC是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面元素，反之亦然。它与普通的块框类似，但不同之处在于:</p>
+<p>　　【1】可以阻止元素被浮动元素覆盖</p>
+<p>　　【2】可以包含浮动元素</p>
+<p>　　【3】属于同一个BFC的两个相邻块级子元素的上下margin会发生重叠，(设置writing-mode:tb-rl时，水平margin会发生重叠)。所以当两个相邻块级子元素分属于不同的BFC时可以阻止margin重叠</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/25/%E7%AE%97%E6%B3%95%E9%A2%98%E7%BB%83%E4%B9%A0%E9%A2%981/" class="archive-article-date">
-  	<time datetime="2021-04-25T14:36:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/25/%E7%AE%97%E6%B3%95%E9%A2%98%E7%BB%83%E4%B9%A0%E9%A2%981/">我的第二篇博文</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -193,198 +229,115 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://buildccy.github.io/2021/04/20/BFC%E5%B8%83%E5%B1%80/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/22/transition%E5%92%8Canimation%E7%9A%84%E5%8C%BA%E5%88%AB/" class="archive-article-date">
-  	<time datetime="2021-04-22T13:46:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-22</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2021/04/20/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E5%8D%9A%E6%96%87/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          我的第二篇博文
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/04/20/CSS3%E5%8A%A8%E7%94%BB%E5%92%8CJS%E5%8A%A8%E7%94%BB%E7%9A%84%E6%AF%94%E8%BE%83/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我的第二篇博文</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/22/transition%E5%92%8Canimation%E7%9A%84%E5%8C%BA%E5%88%AB/">我的第二篇博文</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/20/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E5%8D%9A%E6%96%87/" class="archive-article-date">
-  	<time datetime="2021-04-20T12:46:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/20/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E5%8D%9A%E6%96%87/">我的第二篇博文</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">不知道写什么，就随便打一些字</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/20/BFC%E5%B8%83%E5%B1%80/" class="archive-article-date">
-  	<time datetime="2021-04-20T12:46:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/20/BFC%E5%B8%83%E5%B1%80/">我的第二篇博文</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/20/CSS3%E5%8A%A8%E7%94%BB%E5%92%8CJS%E5%8A%A8%E7%94%BB%E7%9A%84%E6%AF%94%E8%BE%83/" class="archive-article-date">
-  	<time datetime="2021-04-20T12:46:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/20/CSS3%E5%8A%A8%E7%94%BB%E5%92%8CJS%E5%8A%A8%E7%94%BB%E7%9A%84%E6%AF%94%E8%BE%83/">我的第二篇博文</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/20/hello-world/" class="archive-article-date">
-  	<time datetime="2021-04-20T10:53:15.018Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/20/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -407,8 +360,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
