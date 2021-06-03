@@ -159,10 +159,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<p>tittle： 宏任务与微任务<br>date： 2021-06-03 22:47:21<br>tags： 笔记</p>
-<hr>
-<h1 id="（转）宏任务和微任务到底是什么？"><a href="#（转）宏任务和微任务到底是什么？" class="headerlink" title="（转）宏任务和微任务到底是什么？"></a>（转）宏任务和微任务到底是什么？</h1><p>先来一道常见的面试题：</p>
+        <h1 id="（转）宏任务和微任务到底是什么？"><a href="#（转）宏任务和微任务到底是什么？" class="headerlink" title="（转）宏任务和微任务到底是什么？"></a>（转）宏任务和微任务到底是什么？</h1><p>先来一道常见的面试题：</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;start&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;setTimeout&#x27;</span>)</span><br><span class="line">&#125;, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;promise&#x27;</span>)</span><br><span class="line">  resolve()</span><br><span class="line">&#125;)</span><br><span class="line">  .then(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;then1&#x27;</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;then2&#x27;</span>)</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;end&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 <p>应该不少同学都能答出来，结果为：</p>
@@ -298,6 +295,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -337,10 +345,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<p>tittle： Promise补充理解<br>date： 2021-06-03 22:06:21<br>tags： 笔记</p>
-<hr>
-<h1 id="Promise补充认识、习题"><a href="#Promise补充认识、习题" class="headerlink" title="Promise补充认识、习题"></a>Promise补充认识、习题</h1><p>promise对象作为异步任务结果的占位符，它代表了我们暂时还未获得但将来有希望获得的值（异步）。然鹅需要注意的是，通过Promise构造函数创建是同步执行的，而Promise的方法then本质也是同步执行的，但因为在then函数定义内部</p>
+        <h1 id="Promise补充认识、习题"><a href="#Promise补充认识、习题" class="headerlink" title="Promise补充认识、习题"></a>Promise补充认识、习题</h1><p>promise对象作为异步任务结果的占位符，它代表了我们暂时还未获得但将来有希望获得的值（异步）。然鹅需要注意的是，通过Promise构造函数创建是同步执行的，而Promise的方法then本质也是同步执行的，但因为在then函数定义内部</p>
 <p><em>Promise 构造函数时同步执行的，then 方法表现为异步</em></p>
 <p>示例：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">    resolve(<span class="number">3</span>);</span><br><span class="line">&#125;).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//执行结果 1 2 3</span></span><br></pre></td></tr></table></figure>
@@ -365,6 +370,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
