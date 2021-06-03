@@ -6,16 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://Buildccy.github.io">
-  <title>Archives: 2021 | Buildccy的个人博客</title>
+  <title>浏览器加载和渲染html的顺序和加载速度的优化 | Buildccy的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个前端菜鸟的进阶之路">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Buildccy的个人博客">
-<meta property="og:url" content="https://buildccy.github.io/archives/2021/index.html">
+  <meta name="description" content="浏览器加载和渲染html的顺序和加载速度的优化关于“浏览器加载和渲染HTML的顺序” 浏览器加载和渲染html的顺序  IE下载的顺序是从上到下，渲染的顺序也是从上到下，下载和渲染是同时进行的。  在渲染到页面的某一部分时，其上面的所有部分都已经下载完成（并不是说所有相关联的元素都已经下载完）。  如果遇到语义解释性的标签嵌入文件（JS脚本，CSS样式），那么此时IE的下载过程会启用单独连接进行下">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浏览器加载和渲染html的顺序和加载速度的优化">
+<meta property="og:url" content="https://buildccy.github.io/2021/06/03/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8A%A0%E8%BD%BD%E5%92%8C%E6%B8%B2%E6%9F%93html%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%92%8C%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6%E7%9A%84%E4%BC%98%E5%8C%96/index.html">
 <meta property="og:site_name" content="Buildccy的个人博客">
-<meta property="og:description" content="一个前端菜鸟的进阶之路">
+<meta property="og:description" content="浏览器加载和渲染html的顺序和加载速度的优化关于“浏览器加载和渲染HTML的顺序” 浏览器加载和渲染html的顺序  IE下载的顺序是从上到下，渲染的顺序也是从上到下，下载和渲染是同时进行的。  在渲染到页面的某一部分时，其上面的所有部分都已经下载完成（并不是说所有相关联的元素都已经下载完）。  如果遇到语义解释性的标签嵌入文件（JS脚本，CSS样式），那么此时IE的下载过程会启用单独连接进行下">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-06-03T06:32:01.000Z">
+<meta property="article:modified_time" content="2021-06-03T14:01:35.302Z">
 <meta property="article:author" content="Buildccy">
+<meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Buildccy的个人博客" type="application/atom+xml">
@@ -152,116 +155,155 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-浏览器加载和渲染html的顺序和加载速度的优化" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/06/03/%E5%AE%8F%E4%BB%BB%E5%8A%A1%E5%92%8C%E5%BE%AE%E4%BB%BB%E5%8A%A1/" class="archive-article-date">
-  	<time datetime="2021-06-03T15:05:58.734Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-03</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/06/03/Promise%E8%A1%A5%E5%85%85%E8%AE%A4%E8%AF%86%E3%80%81%E4%B9%A0%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2021-06-03T15:05:58.723Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-03</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/06/03/Promise%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
-  	<time datetime="2021-06-03T13:57:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/06/03/Promise%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%9E%E7%8E%B0/">Promise详解与实现</a>
+    <h1 class="article-title" itemprop="name">
+      浏览器加载和渲染html的顺序和加载速度的优化
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/06/03/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8A%A0%E8%BD%BD%E5%92%8C%E6%B8%B2%E6%9F%93html%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%92%8C%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6%E7%9A%84%E4%BC%98%E5%8C%96/" class="archive-article-date">
+        
+        <a href="/2021/06/03/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8A%A0%E8%BD%BD%E5%92%8C%E6%B8%B2%E6%9F%93html%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%92%8C%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6%E7%9A%84%E4%BC%98%E5%8C%96/" class="archive-article-date">
   	<time datetime="2021-06-03T06:32:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-03</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/06/03/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8A%A0%E8%BD%BD%E5%92%8C%E6%B8%B2%E6%9F%93html%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%92%8C%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6%E7%9A%84%E4%BC%98%E5%8C%96/">浏览器加载和渲染html的顺序和加载速度的优化</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="浏览器加载和渲染html的顺序和加载速度的优化"><a href="#浏览器加载和渲染html的顺序和加载速度的优化" class="headerlink" title="浏览器加载和渲染html的顺序和加载速度的优化"></a>浏览器加载和渲染html的顺序和加载速度的优化</h1><p>关于“浏览器加载和渲染HTML的顺序”</p>
+<p><strong>浏览器加载和渲染html的顺序</strong></p>
+<ol>
+<li><p>IE下载的顺序是从上到下，渲染的顺序也是从上到下，下载和渲染是同时进行的。</p>
+</li>
+<li><p>在渲染到页面的某一部分时，其上面的所有部分都已经下载完成（并不是说所有相关联的元素都已经下载完）。</p>
+</li>
+<li><p>如果遇到语义解释性的标签嵌入文件（JS脚本，CSS样式），那么此时IE的下载过程会启用单独连接进行下载。</p>
+</li>
+<li><p>样式表在下载完成后，将和以前下载的所有样式表一起进行解析，解析完成后，将对此前所有元素（含以前已经渲染的）重新进行渲染。</p>
+</li>
+<li><p>JS、CSS中如有重定义，后定义函数将覆盖前定义函数。</p>
+</li>
+</ol>
+<p><strong>JS的加载</strong></p>
+<ol>
+<li><p>不能并行下载和解析（阻塞下载）。</p>
+</li>
+<li><p>当引用了JS的时候，浏览器发送1个js request就会一直等待该request的返回。因为浏览器需要1个稳定的DOM树结构，而JS中很有可能有</p>
+</li>
+</ol>
+<p>代码直接改变了DOM树结构，比如使用 document.write 或 appendChild,甚至是直接使用的location.href进行跳转，浏览器为了防止出现JS修</p>
+<p>改DOM树，需要重新构建DOM树的情况，所以 就会阻塞其他的下载和呈现.</p>
+<p><strong>如何加快HTML页面加载速度</strong></p>
+<ol>
+<li>页面减肥：</li>
+</ol>
+<p>a. 页面的肥瘦是影响加载速度最重要的因素。</p>
+<p>b. 删除不必要的空格、注释。</p>
+<p>c. 将inline的script和css移到外部文件。</p>
+<p>d. 可以使用HTML Tidy来给HTML减肥，还可以使用一些压缩工具来给JavaScript减肥。</p>
+<ol start="2">
+<li>减少文件数量：</li>
+</ol>
+<p>a. 减少页面上引用的文件数量可以减少HTTP连接数。</p>
+<p>b. 许多JavaScript、CSS文件可以合并最好合并，人家财帮子都把自己的JavaScript. functions和Prototype.js合并到一个base.js文件里去了。</p>
+<ol start="3">
+<li>减少域名查询：</li>
+</ol>
+<p>a. DNS查询和解析域名也是消耗时间的，所以要减少对外部JavaScript、CSS、图片等资源的引用，不同域名的使用越少越好。</p>
+<ol start="4">
+<li>缓存重用数据：</li>
+</ol>
+<p>a. 对重复使用的数据进行缓存。</p>
+<ol start="5">
+<li>优化页面元素加载顺序：</li>
+</ol>
+<p>a. 首先加载页面最初显示的内容和与之相关的JavaScript和CSS，然后加载HTML相关的东西，像什么不是最初显示相关的图片、flash、视频</p>
+<p>等很肥的资源就最后加载。</p>
+<ol start="6">
+<li>减少inline JavaScript的数量：</li>
+</ol>
+<p>a. 浏览器parser会假设inline JavaScript会改变页面结构，所以使用inline JavaScript开销较大。</p>
+<p>b. 不要使用document.write()这种输出内容的方法，使用现代W3C DOM方法来为现代浏览器处理页面内容。</p>
+<ol start="7">
+<li>使用现代CSS和合法的标签：</li>
+</ol>
+<p>a. 使用现代CSS来减少标签和图像，例如使用现代CSS+文字完全可以替代一些只有文字的图片。</p>
+<p>b. 使用合法的标签避免浏览器解析HTML时做“error correction”等操作，还可以被HTML Tidy来给HTML减肥。</p>
+<ol start="8">
+<li>Chunk your content：</li>
+</ol>
+<p>a. 不要使用嵌套table，而使用非嵌套table或者div。将基于大块嵌套的table的layout分解成多个小table，这样就不需要等到整个页面（或</p>
+<p>大table）内容全部加载完才显示。</p>
+<ol start="9">
+<li>指定图像和table的大小：</li>
+</ol>
+<p>a. 如果浏览器可以立即决定图像或table的大小，那么它就可以马上显示页面而不要重新做一些布局安排的工作。</p>
+<p>b. 这不仅加快了页面的显示，也预防了页面完成加载后布局的一些不当的改变。</p>
+<p>c. image使用height和width。</p>
+<p><strong>HTML页面加载和解析流程</strong></p>
+<p><em><strong>浏览器加载html和解析流程是按文档内容从上之下顺序进行的</strong></em></p>
+<ol>
+<li><p>用户输入网址（假设是个html页面，并且是第一次访问），浏览器向服务器发出请求，服务器返回html文件。</p>
+</li>
+<li><p>浏览器开始载入html代码，发现<head>标签内有一个<link>标签引用外部CSS文件。</p>
+</li>
+<li><p>浏览器又发出CSS文件的请求，服务器返回这个CSS文件。</p>
+</li>
+<li><p>浏览器继续载入html中<body>部分的代码，并且CSS文件已经拿到手了，可以开始渲染页面了。</p>
+</li>
+<li><p>浏览器在代码中发现一个<img>标签引用了一张图片，向服务器发出请求。此时浏览器不会等到图片下载完，而是继续渲染后面的代码。</p>
+</li>
+<li><p>服务器返回图片文件，由于图片占用了一定面积，影响了后面段落的排布，因此浏览器需要回过头来重新渲染这部分代码。</p>
+</li>
+<li><p>浏览器发现了一个包含一行Javascript代码的<script>标签，赶快运行它。</p>
+</li>
+<li><p>Javascript脚本执行了这条语句，它命令浏览器隐藏掉代码中的某个<style>（style.display=”none”）。杯具啊，突然就少了这么一个元</p>
+</li>
+</ol>
+<p>素，浏览器不得不重新渲染这部分代码。</p>
+<ol start="9">
+<li><p>终于等到了</html>的到来，浏览器泪流满面…… </p>
+</li>
+<li><p>等等，还没完，用户点了一下界面中的“换肤”按钮，Javascript让浏览器换了一下＜link＞标签的CSS路径。</p>
+</li>
+<li><p>浏览器召集了在座的各位<div><span><ul><li>们，“大伙儿收拾收拾行李，咱得重新来过……”，浏览器向服务器请求了新的CSS文件，</p>
+</li>
+</ol>
+<p>重新渲染页面。</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -273,228 +315,114 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://buildccy.github.io/2021/06/03/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8A%A0%E8%BD%BD%E5%92%8C%E6%B8%B2%E6%9F%93html%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%92%8C%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6%E7%9A%84%E4%BC%98%E5%8C%96/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/05/22/%E6%9D%82%E9%A2%98%E9%9B%86/" class="archive-article-date">
-  	<time datetime="2021-05-22T13:36:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-22</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2021/06/03/Promise%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%9E%E7%8E%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Promise详解与实现
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/05/22/%E6%9D%82%E9%A2%98%E9%9B%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">杂题集</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/05/22/%E6%9D%82%E9%A2%98%E9%9B%86/">杂题集</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/05/22/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5-%E6%89%8B%E6%92%95hexo%EF%BC%88%E7%AC%AC%E4%BA%8C%E6%9C%9F%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2021-05-22T12:12:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/05/22/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5-%E6%89%8B%E6%92%95hexo%EF%BC%88%E7%AC%AC%E4%BA%8C%E6%9C%9F%EF%BC%89/">项目实践-手撕hexo（第二期）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/05/22/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5-%E6%89%8B%E6%92%95hexo%EF%BC%88%E7%AC%AC%E4%B8%80%E6%9C%9F%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2021-05-22T10:15:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/05/22/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5-%E6%89%8B%E6%92%95hexo%EF%BC%88%E7%AC%AC%E4%B8%80%E6%9C%9F%EF%BC%89/">项目实践-手撕hexo（第一期）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">博客搭建 hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/25/%E7%AE%97%E6%B3%95%E9%A2%98%E7%BB%83%E4%B9%A0%E9%A2%981/" class="archive-article-date">
-  	<time datetime="2021-04-25T14:36:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/25/%E7%AE%97%E6%B3%95%E9%A2%98%E7%BB%83%E4%B9%A0%E9%A2%981/">我的第二篇博文</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/22/transition%E5%92%8Canimation%E7%9A%84%E5%8C%BA%E5%88%AB/" class="archive-article-date">
-  	<time datetime="2021-04-22T13:46:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/22/transition%E5%92%8Canimation%E7%9A%84%E5%8C%BA%E5%88%AB/">我的第二篇博文</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/20/BFC%E5%B8%83%E5%B1%80/" class="archive-article-date">
-  	<time datetime="2021-04-20T12:46:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/20/BFC%E5%B8%83%E5%B1%80/">我的第二篇博文</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2021/page/2/">2</a><a class="extend next" rel="next" href="/archives/2021/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -518,8 +446,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
