@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://Buildccy.github.io">
   <title>我的第二篇博文 | Buildccy的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="算法题 const arr&#x3D;[1,2,3,4,5,6]为一无重复数的整型数组 const target&#x3D;6 输出一个二维数组，按从长到短输出 [   [1,1,1,1,1,1],   [1,1,1,1,2],   …,   [6] ] 1234567891011121314151617181920&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;	con">
+  <meta name="description" content="算法题 const arr&#x3D;[1,2,3,4,5,6]为一无重复数的整型数组 const target&#x3D;6 输出一个二维数组，按从长到短输出 [   [1,1,1,1,1,1],   [1,1,1,1,2],   …,   [6] ]">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我的第二篇博文">
 <meta property="og:url" content="https://buildccy.github.io/2021/04/25/%E7%AE%97%E6%B3%95%E9%A2%98%E7%BB%83%E4%B9%A0%E9%A2%981/index.html">
 <meta property="og:site_name" content="Buildccy的个人博客">
-<meta property="og:description" content="算法题 const arr&#x3D;[1,2,3,4,5,6]为一无重复数的整型数组 const target&#x3D;6 输出一个二维数组，按从长到短输出 [   [1,1,1,1,1,1],   [1,1,1,1,2],   …,   [6] ] 1234567891011121314151617181920&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;	con">
+<meta property="og:description" content="算法题 const arr&#x3D;[1,2,3,4,5,6]为一无重复数的整型数组 const target&#x3D;6 输出一个二维数组，按从长到短输出 [   [1,1,1,1,1,1],   [1,1,1,1,2],   …,   [6] ]">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-04-25T14:36:19.000Z">
-<meta property="article:modified_time" content="2021-06-02T15:04:46.610Z">
+<meta property="article:modified_time" content="2021-06-03T15:40:27.184Z">
 <meta property="article:author" content="Buildccy">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
@@ -185,6 +185,8 @@
 <p>  …,</p>
 <p>  [6]</p>
 <p>]</p>
+<span id="more"></span>
+
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">	<span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line">	<span class="comment">// console.log(arr)</span></span><br><span class="line">	<span class="keyword">const</span> target = <span class="number">6</span></span><br><span class="line">	<span class="keyword">var</span> result= []</span><br><span class="line">	<span class="keyword">var</span> fun = <span class="function"><span class="keyword">function</span>(<span class="params">arr, target</span>) </span>&#123;</span><br><span class="line">			</span><br><span class="line">		<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; target; i++) &#123;</span><br><span class="line">			<span class="keyword">var</span> arr=[]</span><br><span class="line">			<span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; target - i; j++) &#123;</span><br><span class="line">				arr.push(<span class="number">1</span>)</span><br><span class="line">			&#125;</span><br><span class="line">			result.push(arr)</span><br><span class="line">			result[i].splice(-<span class="number">1</span>,<span class="number">1</span>,target-i)</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> result</span><br><span class="line">	&#125;</span><br><span class="line">	fun(arr, target)</span><br><span class="line">	<span class="built_in">console</span>.log(result)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
       
 

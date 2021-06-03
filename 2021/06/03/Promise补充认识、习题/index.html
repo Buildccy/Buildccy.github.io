@@ -16,7 +16,7 @@
 <meta property="og:description" content="Promise补充认识、习题promise对象作为异步任务结果的占位符，它代表了我们暂时还未获得但将来有希望获得的值（异步）。然鹅需要注意的是，通过Promise构造函数创建是同步执行的，而Promise的方法then本质也是同步执行的，但因为在then函数定义内部 Promise 构造函数时同步执行的，then 方法表现为异步 示例： 12345678910new Promise(res&#x3D;&amp;gt">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-06-03T14:06:21.000Z">
-<meta property="article:modified_time" content="2021-06-03T15:29:56.520Z">
+<meta property="article:modified_time" content="2021-06-03T15:38:29.215Z">
 <meta property="article:author" content="Buildccy">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
@@ -179,7 +179,7 @@
 <p><em>Promise 构造函数时同步执行的，then 方法表现为异步</em></p>
 <p>示例：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">    resolve(<span class="number">3</span>);</span><br><span class="line">&#125;).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//执行结果 1 2 3</span></span><br></pre></td></tr></table></figure>
-
+<span id="more"></span>
 <p>语法：</p>
 <p>new Promise(function(resolve,reject){…});//executor<br>构建 Promise 对象时，需要传入一个 executor 函数，主要业务流程都在 executor 中执行。</p>
 <p>Promise 构造函数执行时立即调用 executor 函数，resolve 和 reject 两个函数作为参数传递给 executor，resolve 和 reject 函数被调用时，分别将 Promise 的状态改为 fulfilled(完成) 和 rejected(失败)。一旦状态改变，就不会再变，任何时候都可以得到这个结果。</p>

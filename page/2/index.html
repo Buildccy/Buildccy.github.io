@@ -180,45 +180,9 @@
 <li>动画效果比css3动画丰富，比如曲线运动，冲击闪烁，视差滚动效果，只有js动画才能完成</li>
 <li>js动画大多数情况下没有兼容性问题，而css3动画有兼容性问题</li>
 </ol>
-<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ol>
-<li>js动画的复杂度高于css3</li>
-<li>js在动画浏览器的主线程中执行，而主线程还有其他javaScript脚本，样式计算、布局、绘制任务等，对其干扰可能出现阻塞从而出现丢帧的情况</li>
-<li>js动画往往需要频繁操作DOM的css属性来实现视觉上的动画效果，这个时候浏览器要不停地执行重绘和重排，这对于性能的消耗是很大的，尤其是在分配给浏览器的内存没那么宽裕的移动端。</li>
-</ol>
-<h3 id="CSS3动画"><a href="#CSS3动画" class="headerlink" title="CSS3动画"></a>CSS3动画</h3><h4 id="优点：-1"><a href="#优点：-1" class="headerlink" title="优点："></a>优点：</h4><ol>
-<li><p>部分情况下浏览器可以对动画进行优化，为什么说部分情况下呢，因为是有条件的：</p>
-<ul>
-<li><p>在Chromium基础上的浏览器中</p>
-</li>
-<li><p>同时CSS动画不触发layout或paint，在CSS动画或JS动画触发了paint或layout时，需要main thread进行Layer树的重计算，这时CSS动画或JS动画都会阻塞后续操作。</p>
-<blockquote>
-<p>在主线程中，维护了一棵Layer树（LayerTreeHost），管理了TiledLayer，在compositor thread，维护了同样一颗LayerTreeHostImpl，管理了LayerImpl，这两棵树的内容是拷贝关系。因此可以彼此不干扰，当Javascript在main thread操作LayerTreeHost的同时，compositor thread可以用LayerTreeHostImpl做渲染。当Javascript繁忙导致主线程卡住时，合成到屏幕的过程也是流畅的。<br>为了实现防假死，鼠标键盘消息会被首先分发到compositor thread，然后再到main thread。这样，当main thread繁忙时，compositor thread还是能够响应一部分消息，例如，鼠标滚动时，加入main thread繁忙，compositor thread也会处理滚动消息，滚动已经被提交的页面部分（未被提交的部分将被刷白）。</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p>部分效果可以强制使用硬件加速 （通过 GPU 来提高动画性能）</p>
-</li>
-</ol>
-<h4 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h4><ol>
-<li>运行进程控制较弱，css3动画只能在某些场景下控制动画的暂停与继续，不能在特定的位置添加添加回调函数</li>
-<li>js在动画浏览器的主线程中执行，而主线程还有其他javaScript脚本，样式计算、布局、绘制任务等，对其干扰可能出现阻塞从而出现丢帧的情况</li>
-</ol>
-<h3 id="css动画比js动画流畅的前提"><a href="#css动画比js动画流畅的前提" class="headerlink" title="css动画比js动画流畅的前提"></a>css动画比js动画流畅的前提</h3><ul>
-<li>js在执行一些复杂的任务</li>
-<li>css动画比较少或者不触发pain和layout，即重绘和重排，例如通过改变如下属性生成的css动画<ul>
-<li>backface-visibility</li>
-<li>opacity</li>
-<li>perspective （设置元素视图）</li>
-<li>perspective-origin</li>
-<li>transfrom</li>
-</ul>
-</li>
-<li>部分属性能够启动3D加速和GPU硬件加速，例如使用transform的translateZ进行3D变换时</li>
-<li>在Chromium基础上的浏览器中，这个貌似是内核做了优化，当css动画知识改变transfrom和opacity时，整个CSS动画得以在compositor thread完成（而JS动画则会在main thread执行),这样css动画渲染不会影响主线程。</li>
-</ul>
-<p>### 总结<br>回归到日常开发中，当有一个动画的需求时，首要考虑的肯定是能不能尽可能实现的问题。如果在CSS动画和JS动画都能实现的基础上才会要去根据上面总结的权衡哪个性能更好的问题。总之，并不一定css动画就比js动画好，还得看具体的需求和业务场景。</p>
-
+        
+          <a class="article-more-a" href="/2021/04/20/CSS3%E5%8A%A8%E7%94%BB%E5%92%8CJS%E5%8A%A8%E7%94%BB%E7%9A%84%E6%AF%94%E8%BE%83/#more">more >></a>
+        
       
 
       
