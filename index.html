@@ -154,92 +154,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-项目实践-手撕hexo（第三期）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/06/17/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5-%E6%89%8B%E6%92%95hexo%EF%BC%88%E7%AC%AC%E4%B8%89%E6%9C%9F%EF%BC%89/">项目实践-手撕hexo（第三期）</a>
-    </h1>
-  
-
-        
-        <a href="/2021/06/17/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5-%E6%89%8B%E6%92%95hexo%EF%BC%88%E7%AC%AC%E4%B8%89%E6%9C%9F%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2021-06-17T14:23:16.856Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="hexo更新博客时遇到的问题"><a href="#hexo更新博客时遇到的问题" class="headerlink" title="hexo更新博客时遇到的问题"></a>hexo更新博客时遇到的问题</h1><h2 id="上传GitHub提示：noting-to-commit-working-tree-clean。"><a href="#上传GitHub提示：noting-to-commit-working-tree-clean。" class="headerlink" title="上传GitHub提示：noting to commit,working tree clean。"></a>上传GitHub提示：noting to commit,working tree clean。</h2><p>使用“hexo d”命令，上传博客到GitHubPages时出现了这样的提示。</p>
-<blockquote>
-<p>报错信息：”nothing to commit, working tree clean”</p>
-</blockquote>
-<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>在网上查了许久，上面所描述的情况多种多样。但是就我个人认为，主要的原因是：</p>
-<p>是因为并没有修改要提交的项目，报的提示的意思是，项目（文件夹）没有被修改，没必要提交。</p>
-<p>而hexo进行提交博客，需要使用hexo d命令，但是它是需要是使用 hexo-deployer-git 包的，</p>
-<p>如果没有安装，它检索不到博文，进而提交时，让github发现项目没有发生变化，于是提交失败，弹出这种提示。</p>
-<p>那么安装 hexo-deployer-git 就行了。</p>
-<blockquote>
-<p>npm install hexo-deployer-git</p>
-</blockquote>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>其他的情况碰到noting to commit,working tree clean，同理。首先要让你的项目产生变化，才能提交。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">博客搭建 hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/06/17/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5-%E6%89%8B%E6%92%95hexo%EF%BC%88%E7%AC%AC%E4%B8%89%E6%9C%9F%EF%BC%89/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-JS中的按位运算符" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -404,15 +318,113 @@
 
 
   
-    <article id="post-宏任务和微任务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-项目实践-手撕hexo（第三期）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/03/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5-%E6%89%8B%E6%92%95hexo%EF%BC%88%E7%AC%AC%E4%B8%89%E6%9C%9F%EF%BC%89/">项目实践-手撕hexo（第三期）</a>
+    </h1>
+  
+
+        
+        <a href="/2021/06/03/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5-%E6%89%8B%E6%92%95hexo%EF%BC%88%E7%AC%AC%E4%B8%89%E6%9C%9F%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2021-06-03T15:08:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-03</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<p>title： 宏任务与微任务<br>date： 2021-06-03 22:47:21<br>tags： 笔记</p>
-<hr>
-<h1 id="（转）宏任务和微任务到底是什么？"><a href="#（转）宏任务和微任务到底是什么？" class="headerlink" title="（转）宏任务和微任务到底是什么？"></a>（转）宏任务和微任务到底是什么？</h1><p>先来一道常见的面试题：</p>
+        <h1 id="hexo更新博客时遇到的问题"><a href="#hexo更新博客时遇到的问题" class="headerlink" title="hexo更新博客时遇到的问题"></a>hexo更新博客时遇到的问题</h1><h2 id="上传GitHub提示：noting-to-commit-working-tree-clean。"><a href="#上传GitHub提示：noting-to-commit-working-tree-clean。" class="headerlink" title="上传GitHub提示：noting to commit,working tree clean。"></a>上传GitHub提示：noting to commit,working tree clean。</h2><p>使用“hexo d”命令，上传博客到GitHubPages时出现了这样的提示。</p>
+<blockquote>
+<p>报错信息：”nothing to commit, working tree clean”</p>
+</blockquote>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>在网上查了许久，上面所描述的情况多种多样。但是就我个人认为，主要的原因是：</p>
+<p>是因为并没有修改要提交的项目，报的提示的意思是，项目（文件夹）没有被修改，没必要提交。</p>
+<p>而hexo进行提交博客，需要使用hexo d命令，但是它是需要是使用 hexo-deployer-git 包的，</p>
+<p>如果没有安装，它检索不到博文，进而提交时，让github发现项目没有发生变化，于是提交失败，弹出这种提示。</p>
+<p>那么安装 hexo-deployer-git 就行了。</p>
+<blockquote>
+<p>npm install hexo-deployer-git</p>
+</blockquote>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>其他的情况碰到noting to commit,working tree clean，同理。首先要让你的项目产生变化，才能提交。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">博客搭建 hexo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/06/03/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5-%E6%89%8B%E6%92%95hexo%EF%BC%88%E7%AC%AC%E4%B8%89%E6%9C%9F%EF%BC%89/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-宏任务和微任务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/03/%E5%AE%8F%E4%BB%BB%E5%8A%A1%E5%92%8C%E5%BE%AE%E4%BB%BB%E5%8A%A1/">宏任务与微任务</a>
+    </h1>
+  
+
+        
+        <a href="/2021/06/03/%E5%AE%8F%E4%BB%BB%E5%8A%A1%E5%92%8C%E5%BE%AE%E4%BB%BB%E5%8A%A1/" class="archive-article-date">
+  	<time datetime="2021-06-03T14:47:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="（转）宏任务和微任务到底是什么？"><a href="#（转）宏任务和微任务到底是什么？" class="headerlink" title="（转）宏任务和微任务到底是什么？"></a>（转）宏任务和微任务到底是什么？</h1><p>先来一道常见的面试题：</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;start&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;setTimeout&#x27;</span>)</span><br><span class="line">&#125;, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;promise&#x27;</span>)</span><br><span class="line">  resolve()</span><br><span class="line">&#125;)</span><br><span class="line">  .then(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;then1&#x27;</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;then2&#x27;</span>)</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;end&#x27;</span>)</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2021/06/03/%E5%AE%8F%E4%BB%BB%E5%8A%A1%E5%92%8C%E5%BE%AE%E4%BB%BB%E5%8A%A1/#more">more >></a>
@@ -424,6 +436,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -461,12 +484,24 @@
     <article id="post-Promise补充认识、习题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/03/Promise%E8%A1%A5%E5%85%85%E8%AE%A4%E8%AF%86%E3%80%81%E4%B9%A0%E9%A2%98/">Promise补充理解</a>
+    </h1>
+  
+
+        
+        <a href="/2021/06/03/Promise%E8%A1%A5%E5%85%85%E8%AE%A4%E8%AF%86%E3%80%81%E4%B9%A0%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2021-06-03T14:06:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-03</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<p>title： Promise补充理解<br>date： 2021-06-03 22:06:21<br>tags： 笔记</p>
-<hr>
-<h1 id="Promise补充认识、习题"><a href="#Promise补充认识、习题" class="headerlink" title="Promise补充认识、习题"></a>Promise补充认识、习题</h1><p>promise对象作为异步任务结果的占位符，它代表了我们暂时还未获得但将来有希望获得的值（异步）。然鹅需要注意的是，通过Promise构造函数创建是同步执行的，而Promise的方法then本质也是同步执行的，但因为在then函数定义内部</p>
+        <h1 id="Promise补充认识、习题"><a href="#Promise补充认识、习题" class="headerlink" title="Promise补充认识、习题"></a>Promise补充认识、习题</h1><p>promise对象作为异步任务结果的占位符，它代表了我们暂时还未获得但将来有希望获得的值（异步）。然鹅需要注意的是，通过Promise构造函数创建是同步执行的，而Promise的方法then本质也是同步执行的，但因为在then函数定义内部</p>
 <p><em>Promise 构造函数时同步执行的，then 方法表现为异步</em></p>
 <p>示例：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">    resolve(<span class="number">3</span>);</span><br><span class="line">&#125;).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//执行结果 1 2 3</span></span><br></pre></td></tr></table></figure>
@@ -480,6 +515,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -696,7 +742,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/06/02/CSS3%E5%8A%A8%E7%94%BB%E5%92%8CJS%E5%8A%A8%E7%94%BB%E7%9A%84%E6%AF%94%E8%BE%83/">我的第二篇博文</a>
+      <a class="article-title" href="/2021/06/02/CSS3%E5%8A%A8%E7%94%BB%E5%92%8CJS%E5%8A%A8%E7%94%BB%E7%9A%84%E6%AF%94%E8%BE%83/">CSS3动画和JS动画的比较</a>
     </h1>
   
 
@@ -709,51 +755,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>之前有被问到一个问题，css3动画和js动画性能谁更好，为什么。据我的经验，当然觉得css3动画性能更好，至于为什么一时还真答不上来，所以特意查了一下资料总结一波。</p>
+        <h1 id="CSS3动画和JS动画的比较"><a href="#CSS3动画和JS动画的比较" class="headerlink" title="CSS3动画和JS动画的比较"></a>CSS3动画和JS动画的比较</h1><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>之前有被问到一个问题，css3动画和js动画性能谁更好，为什么。据我的经验，当然觉得css3动画性能更好，至于为什么一时还真答不上来，所以特意查了一下资料总结一波。</p>
 <h3 id="JS动画"><a href="#JS动画" class="headerlink" title="JS动画"></a>JS动画</h3><h4 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h4><ol>
 <li>js动画控制能力强，可以在动画博凡过程中对动画进行精细控制，开始、暂停、终止、取消都是可以做到的</li>
 <li>动画效果比css3动画丰富，比如曲线运动，冲击闪烁，视差滚动效果，只有js动画才能完成</li>
 <li>js动画大多数情况下没有兼容性问题，而css3动画有兼容性问题</li>
 </ol>
-<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ol>
-<li>js动画的复杂度高于css3</li>
-<li>js在动画浏览器的主线程中执行，而主线程还有其他javaScript脚本，样式计算、布局、绘制任务等，对其干扰可能出现阻塞从而出现丢帧的情况</li>
-<li>js动画往往需要频繁操作DOM的css属性来实现视觉上的动画效果，这个时候浏览器要不停地执行重绘和重排，这对于性能的消耗是很大的，尤其是在分配给浏览器的内存没那么宽裕的移动端。</li>
-</ol>
-<h3 id="CSS3动画"><a href="#CSS3动画" class="headerlink" title="CSS3动画"></a>CSS3动画</h3><h4 id="优点：-1"><a href="#优点：-1" class="headerlink" title="优点："></a>优点：</h4><ol>
-<li><p>部分情况下浏览器可以对动画进行优化，为什么说部分情况下呢，因为是有条件的：</p>
-<ul>
-<li><p>在Chromium基础上的浏览器中</p>
-</li>
-<li><p>同时CSS动画不触发layout或paint，在CSS动画或JS动画触发了paint或layout时，需要main thread进行Layer树的重计算，这时CSS动画或JS动画都会阻塞后续操作。</p>
-<blockquote>
-<p>在主线程中，维护了一棵Layer树（LayerTreeHost），管理了TiledLayer，在compositor thread，维护了同样一颗LayerTreeHostImpl，管理了LayerImpl，这两棵树的内容是拷贝关系。因此可以彼此不干扰，当Javascript在main thread操作LayerTreeHost的同时，compositor thread可以用LayerTreeHostImpl做渲染。当Javascript繁忙导致主线程卡住时，合成到屏幕的过程也是流畅的。<br>为了实现防假死，鼠标键盘消息会被首先分发到compositor thread，然后再到main thread。这样，当main thread繁忙时，compositor thread还是能够响应一部分消息，例如，鼠标滚动时，加入main thread繁忙，compositor thread也会处理滚动消息，滚动已经被提交的页面部分（未被提交的部分将被刷白）。</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p>部分效果可以强制使用硬件加速 （通过 GPU 来提高动画性能）</p>
-</li>
-</ol>
-<h4 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h4><ol>
-<li>运行进程控制较弱，css3动画只能在某些场景下控制动画的暂停与继续，不能在特定的位置添加添加回调函数</li>
-<li>js在动画浏览器的主线程中执行，而主线程还有其他javaScript脚本，样式计算、布局、绘制任务等，对其干扰可能出现阻塞从而出现丢帧的情况</li>
-</ol>
-<h3 id="css动画比js动画流畅的前提"><a href="#css动画比js动画流畅的前提" class="headerlink" title="css动画比js动画流畅的前提"></a>css动画比js动画流畅的前提</h3><ul>
-<li>js在执行一些复杂的任务</li>
-<li>css动画比较少或者不触发pain和layout，即重绘和重排，例如通过改变如下属性生成的css动画<ul>
-<li>backface-visibility</li>
-<li>opacity</li>
-<li>perspective （设置元素视图）</li>
-<li>perspective-origin</li>
-<li>transfrom</li>
-</ul>
-</li>
-<li>部分属性能够启动3D加速和GPU硬件加速，例如使用transform的translateZ进行3D变换时</li>
-<li>在Chromium基础上的浏览器中，这个貌似是内核做了优化，当css动画知识改变transfrom和opacity时，整个CSS动画得以在compositor thread完成（而JS动画则会在main thread执行),这样css动画渲染不会影响主线程。</li>
-</ul>
-<p>### 总结<br>回归到日常开发中，当有一个动画的需求时，首要考虑的肯定是能不能尽可能实现的问题。如果在CSS动画和JS动画都能实现的基础上才会要去根据上面总结的权衡哪个性能更好的问题。总之，并不一定css动画就比js动画好，还得看具体的需求和业务场景。</p>
-
+<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4>
+        
+          <a class="article-more-a" href="/2021/06/02/CSS3%E5%8A%A8%E7%94%BB%E5%92%8CJS%E5%8A%A8%E7%94%BB%E7%9A%84%E6%AF%94%E8%BE%83/#more">more >></a>
+        
       
 
       

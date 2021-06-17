@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://Buildccy.github.io">
-  <title>Buildccy的个人博客</title>
+  <title>Promise补充理解 | Buildccy的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title： Promise补充理解date： 2021-06-03 22:06:21tags： 笔记  Promise补充认识、习题promise对象作为异步任务结果的占位符，它代表了我们暂时还未获得但将来有希望获得的值（异步）。然鹅需要注意的是，通过Promise构造函数创建是同步执行的，而Promise的方法then本质也是同步执行的，但因为在then函数定义内部 Promise 构造函数">
+  <meta name="description" content="Promise补充认识、习题promise对象作为异步任务结果的占位符，它代表了我们暂时还未获得但将来有希望获得的值（异步）。然鹅需要注意的是，通过Promise构造函数创建是同步执行的，而Promise的方法then本质也是同步执行的，但因为在then函数定义内部 Promise 构造函数时同步执行的，then 方法表现为异步 示例： 123456789new Promise(res&#x3D;&gt;&amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Buildccy的个人博客">
+<meta property="og:title" content="Promise补充理解">
 <meta property="og:url" content="https://buildccy.github.io/2021/06/03/Promise%E8%A1%A5%E5%85%85%E8%AE%A4%E8%AF%86%E3%80%81%E4%B9%A0%E9%A2%98/index.html">
 <meta property="og:site_name" content="Buildccy的个人博客">
-<meta property="og:description" content="title： Promise补充理解date： 2021-06-03 22:06:21tags： 笔记  Promise补充认识、习题promise对象作为异步任务结果的占位符，它代表了我们暂时还未获得但将来有希望获得的值（异步）。然鹅需要注意的是，通过Promise构造函数创建是同步执行的，而Promise的方法then本质也是同步执行的，但因为在then函数定义内部 Promise 构造函数">
+<meta property="og:description" content="Promise补充认识、习题promise对象作为异步任务结果的占位符，它代表了我们暂时还未获得但将来有希望获得的值（异步）。然鹅需要注意的是，通过Promise构造函数创建是同步执行的，而Promise的方法then本质也是同步执行的，但因为在then函数定义内部 Promise 构造函数时同步执行的，then 方法表现为异步 示例： 123456789new Promise(res&#x3D;&gt;&amp;">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-06-03T15:05:58.723Z">
-<meta property="article:modified_time" content="2021-06-17T14:32:53.520Z">
+<meta property="article:published_time" content="2021-06-03T14:06:21.000Z">
+<meta property="article:modified_time" content="2021-06-17T14:42:57.968Z">
 <meta property="article:author" content="Buildccy">
+<meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Buildccy的个人博客" type="application/atom+xml">
@@ -157,12 +158,24 @@
             <article id="post-Promise补充认识、习题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Promise补充理解
+    </h1>
+  
+
+        
+        <a href="/2021/06/03/Promise%E8%A1%A5%E5%85%85%E8%AE%A4%E8%AF%86%E3%80%81%E4%B9%A0%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2021-06-03T14:06:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-03</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<p>title： Promise补充理解<br>date： 2021-06-03 22:06:21<br>tags： 笔记</p>
-<hr>
-<h1 id="Promise补充认识、习题"><a href="#Promise补充认识、习题" class="headerlink" title="Promise补充认识、习题"></a>Promise补充认识、习题</h1><p>promise对象作为异步任务结果的占位符，它代表了我们暂时还未获得但将来有希望获得的值（异步）。然鹅需要注意的是，通过Promise构造函数创建是同步执行的，而Promise的方法then本质也是同步执行的，但因为在then函数定义内部</p>
+        <h1 id="Promise补充认识、习题"><a href="#Promise补充认识、习题" class="headerlink" title="Promise补充认识、习题"></a>Promise补充认识、习题</h1><p>promise对象作为异步任务结果的占位符，它代表了我们暂时还未获得但将来有希望获得的值（异步）。然鹅需要注意的是，通过Promise构造函数创建是同步执行的，而Promise的方法then本质也是同步执行的，但因为在then函数定义内部</p>
 <p><em>Promise 构造函数时同步执行的，then 方法表现为异步</em></p>
 <p>示例：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">    resolve(<span class="number">3</span>);</span><br><span class="line">&#125;).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//执行结果 1 2 3</span></span><br></pre></td></tr></table></figure>
@@ -210,6 +223,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -278,7 +302,7 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          宏任务与微任务
         
       </div>
     </a>
