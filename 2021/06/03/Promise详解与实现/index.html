@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://Buildccy.github.io">
   <title>Promise详解与实现 | Buildccy的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="（转）Promise详解与实现（Promise&#x2F;A+规范）1.什么是Promise? Promise是JS异步编程中的重要概念，异步抽象处理对象，是目前比较流行Javascript异步编程解决方案之一  2.对于几种常见异步编程方案 回调函数 事件监听 发布&#x2F;订阅 Promise对象  这里就拿回调函数说说1.对于回调函数 我们用Jquery的ajax获取数据时 都是以回调函数方式获取的数据 12">
+  <meta name="description" content="（转）Promise详解与实现（Promise&#x2F;A+规范）1.什么是Promise? Promise是JS异步编程中的重要概念，异步抽象处理对象，是目前比较流行Javascript异步编程解决方案之一  2.对于几种常见异步编程方案 回调函数 事件监听 发布&#x2F;订阅 Promise对象  这里就拿回调函数说说">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Promise详解与实现">
 <meta property="og:url" content="https://buildccy.github.io/2021/06/03/Promise%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%9E%E7%8E%B0/index.html">
 <meta property="og:site_name" content="Buildccy的个人博客">
-<meta property="og:description" content="（转）Promise详解与实现（Promise&#x2F;A+规范）1.什么是Promise? Promise是JS异步编程中的重要概念，异步抽象处理对象，是目前比较流行Javascript异步编程解决方案之一  2.对于几种常见异步编程方案 回调函数 事件监听 发布&#x2F;订阅 Promise对象  这里就拿回调函数说说1.对于回调函数 我们用Jquery的ajax获取数据时 都是以回调函数方式获取的数据 12">
+<meta property="og:description" content="（转）Promise详解与实现（Promise&#x2F;A+规范）1.什么是Promise? Promise是JS异步编程中的重要概念，异步抽象处理对象，是目前比较流行Javascript异步编程解决方案之一  2.对于几种常见异步编程方案 回调函数 事件监听 发布&#x2F;订阅 Promise对象  这里就拿回调函数说说">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-06-03T13:57:30.000Z">
-<meta property="article:modified_time" content="2021-06-03T14:22:33.416Z">
+<meta property="article:modified_time" content="2021-06-17T14:32:13.765Z">
 <meta property="article:author" content="Buildccy">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
@@ -184,7 +184,9 @@
 <li>发布/订阅</li>
 <li>Promise对象</li>
 </ul>
-<h4 id="这里就拿回调函数说说"><a href="#这里就拿回调函数说说" class="headerlink" title="这里就拿回调函数说说"></a>这里就拿回调函数说说</h4><p>1.对于回调函数 我们用Jquery的ajax获取数据时 都是以回调函数方式获取的数据</p>
+<h4 id="这里就拿回调函数说说"><a href="#这里就拿回调函数说说" class="headerlink" title="这里就拿回调函数说说"></a>这里就拿回调函数说说</h4><span id="more"></span>
+
+<p>1.对于回调函数 我们用Jquery的ajax获取数据时 都是以回调函数方式获取的数据</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$.get(url, (data) &#x3D;&gt; &#123;</span><br><span class="line">    console.log(data)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
 <p>2.如果说 当我们需要发送多个异步请求 并且每个请求之间需要相互依赖 那这时 我们只能 以嵌套方式来解决 形成 “回调地狱”</p>
