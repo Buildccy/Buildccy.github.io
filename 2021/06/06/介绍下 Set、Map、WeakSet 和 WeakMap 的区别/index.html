@@ -6,22 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://Buildccy.github.io">
-  <title>BFC布局 | Buildccy的个人博客</title>
+  <title>set\map\WeakSet\WeakMap | Buildccy的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="（转）　深入理解BFC 定义　　在解释BFC之前，先说一下文档流。我们常说的文档流其实分为定位流、浮动流和普通流三种。而普通流其实就是指BFC中的FC。FC是formatting context的首字母缩写，直译过来是格式化上下文，它是页面中的一块渲染区域，有一套渲染规则，决定了其子元素如何布局，以及和其他元素之间的关系和作用。常见的FC有BFC、IFC，还有GFC和FFC。BFC是block">
+  <meta name="description" content="详解es6中set,map,WeakSet,WeakMap的区别和用法注：JS冷知识 数组前加三点 数组加三点，表示将数组内元素以空格为罗列出来，常用于寻找数组内的最优值。 12var arr &#x3D; [1, 2, 3, 4];console.log(...arr);   输出： 11 2 3 4    setset定义及特征在js中Set 对象允许存储任何类型的唯一值，无论是原始值或者是对">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BFC布局">
-<meta property="og:url" content="https://buildccy.github.io/2021/04/20/BFC%E5%B8%83%E5%B1%80/index.html">
+<meta property="og:title" content="set\map\WeakSet\WeakMap">
+<meta property="og:url" content="https://buildccy.github.io/2021/06/06/%E4%BB%8B%E7%BB%8D%E4%B8%8B%20Set%E3%80%81Map%E3%80%81WeakSet%20%E5%92%8C%20WeakMap%20%E7%9A%84%E5%8C%BA%E5%88%AB/index.html">
 <meta property="og:site_name" content="Buildccy的个人博客">
-<meta property="og:description" content="（转）　深入理解BFC 定义　　在解释BFC之前，先说一下文档流。我们常说的文档流其实分为定位流、浮动流和普通流三种。而普通流其实就是指BFC中的FC。FC是formatting context的首字母缩写，直译过来是格式化上下文，它是页面中的一块渲染区域，有一套渲染规则，决定了其子元素如何布局，以及和其他元素之间的关系和作用。常见的FC有BFC、IFC，还有GFC和FFC。BFC是block">
+<meta property="og:description" content="详解es6中set,map,WeakSet,WeakMap的区别和用法注：JS冷知识 数组前加三点 数组加三点，表示将数组内元素以空格为罗列出来，常用于寻找数组内的最优值。 12var arr &#x3D; [1, 2, 3, 4];console.log(...arr);   输出： 11 2 3 4    setset定义及特征在js中Set 对象允许存储任何类型的唯一值，无论是原始值或者是对">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAoklEQVQ4T+2T4Q2CMBCFv27CBjgCG+gIjAAbOAIjOIJs4Ai6gRvIBpjXXCOp19T/8pJLoTneXcj3Ah91wAV4bu68xwXoAZ2EzEAmE9AWTB6AelRDyaAx9zgh0wE4ATczcTdIE7wl0oe7wX/8RMHigfQTB3fDdM1IEvYyONdIVEOSqDwCY2Z2NaS/UNbqMSQmvauUPlfbNKpBSdTUVyXSs/XyBlRCNBG20I28AAAAAElFTkSuQmCC">
-<meta property="article:published_time" content="2021-04-20T12:46:29.000Z">
-<meta property="article:modified_time" content="2021-06-03T15:44:01.707Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200117101516967.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDA3MzExNQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200117152911903.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDA3MzExNQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200117155845434.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDA3MzExNQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200117165109683.png">
+<meta property="article:published_time" content="2021-06-06T04:41:29.000Z">
+<meta property="article:modified_time" content="2021-06-06T04:46:10.666Z">
 <meta property="article:author" content="Buildccy">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAoklEQVQ4T+2T4Q2CMBCFv27CBjgCG+gIjAAbOAIjOIJs4Ai6gRvIBpjXXCOp19T/8pJLoTneXcj3Ah91wAV4bu68xwXoAZ2EzEAmE9AWTB6AelRDyaAx9zgh0wE4ATczcTdIE7wl0oe7wX/8RMHigfQTB3fDdM1IEvYyONdIVEOSqDwCY2Z2NaS/UNbqMSQmvauUPlfbNKpBSdTUVyXSs/XyBlRCNBG20I28AAAAAElFTkSuQmCC">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200117101516967.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDA3MzExNQ==,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="Buildccy的个人博客" type="application/atom+xml">
   
@@ -157,38 +160,77 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-BFC布局" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-介绍下 Set、Map、WeakSet 和 WeakMap 的区别" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      BFC布局
+      set\map\WeakSet\WeakMap
     </h1>
   
 
         
-        <a href="/2021/04/20/BFC%E5%B8%83%E5%B1%80/" class="archive-article-date">
-  	<time datetime="2021-04-20T12:46:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-20</time>
+        <a href="/2021/06/06/%E4%BB%8B%E7%BB%8D%E4%B8%8B%20Set%E3%80%81Map%E3%80%81WeakSet%20%E5%92%8C%20WeakMap%20%E7%9A%84%E5%8C%BA%E5%88%AB/" class="archive-article-date">
+  	<time datetime="2021-06-06T04:41:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>　　（转）　<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiaohuochai/p/5248536.html">深入理解BFC</a><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAoklEQVQ4T+2T4Q2CMBCFv27CBjgCG+gIjAAbOAIjOIJs4Ai6gRvIBpjXXCOp19T/8pJLoTneXcj3Ah91wAV4bu68xwXoAZ2EzEAmE9AWTB6AelRDyaAx9zgh0wE4ATczcTdIE7wl0oe7wX/8RMHigfQTB3fDdM1IEvYyONdIVEOSqDwCY2Z2NaS/UNbqMSQmvauUPlfbNKpBSdTUVyXSs/XyBlRCNBG20I28AAAAAElFTkSuQmCC" alt="img"></p>
-<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>　　在解释BFC之前，先说一下文档流。我们常说的文档流其实分为定位流、浮动流和普通流三种。而普通流其实就是指BFC中的FC。FC是formatting context的首字母缩写，直译过来是格式化上下文，它是页面中的一块渲染区域，有一套渲染规则，决定了其子元素如何布局，以及和其他元素之间的关系和作用。常见的FC有BFC、IFC，还有GFC和FFC。BFC是block formatting context，也就是块级格式化上下文，是用于布局块级盒子的一块渲染区域</p>
-<h3 id="触发条件"><a href="#触发条件" class="headerlink" title="触发条件"></a>触发条件</h3><p>　　满足下列条件之一就可触发BFC</p>
-<p>　　【1】根元素，即HTML元素</p>
-<p>　　【2】float的值不为none</p>
-<p>　　【3】overflow的值不为visible</p>
-<p>　　【4】display的值为inline-block、table-cell、table-caption</p>
-<p>　　【5】position的值为absolute或fixed</p>
-<h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>　　BFC是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面元素，反之亦然。它与普通的块框类似，但不同之处在于:</p>
-<p>　　【1】可以阻止元素被浮动元素覆盖</p>
-<p>　　【2】可以包含浮动元素</p>
-<p>　　【3】属于同一个BFC的两个相邻块级子元素的上下margin会发生重叠，(设置writing-mode:tb-rl时，水平margin会发生重叠)。所以当两个相邻块级子元素分属于不同的BFC时可以阻止margin重叠</p>
+        <h1 id="详解es6中set-map-WeakSet-WeakMap的区别和用法"><a href="#详解es6中set-map-WeakSet-WeakMap的区别和用法" class="headerlink" title="详解es6中set,map,WeakSet,WeakMap的区别和用法"></a>详解es6中set,map,WeakSet,WeakMap的区别和用法</h1><p><strong>注：JS冷知识 数组前加三点</strong></p>
+<p>数组加三点，表示将数组内元素以空格为罗列出来，常用于寻找数组内的最优值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arr &#x3D; [1, 2, 3, 4];</span><br><span class="line">console.log(...arr);</span><br></pre></td></tr></table></figure>
+
+
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 2 3 4</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="set"><a href="#set" class="headerlink" title="set"></a><strong>set</strong></h2><p>set定义及特征<br>在js中Set 对象允许存储任何类型的唯一值，无论是原始值或者是对象引用。<br>顶层数据结构不具备key—&gt;value特征,内部会自动加index序列。<br>可以存储不同类型的任何数据。<br>如何理解唯一性：对于原始数据类型（boolean，number，string，null，undefined）如果存储相同值则只会保存一个，对于引用类型做“==”判断即引用地址完全相同则只会存一个。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">   <span class="keyword">let</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>();  </span><br><span class="line"><span class="comment">//a,b属于object 值完全相同</span></span><br><span class="line">    <span class="keyword">let</span> a = &#123;</span><br><span class="line">        name:<span class="string">&quot;cc&quot;</span>,</span><br><span class="line">        age:<span class="number">28</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">let</span> b = &#123;</span><br><span class="line">        name:<span class="string">&quot;cc&quot;</span>,</span><br><span class="line">        age:<span class="number">28</span></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//c,d属于number类型 值完全相同</span></span><br><span class="line">    <span class="keyword">let</span> c = <span class="number">0</span>,d = <span class="number">0</span>;</span><br><span class="line"><span class="comment">//e,f 属于Date类型，值相同</span></span><br><span class="line">    <span class="keyword">let</span> e=f = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"></span><br><span class="line">set.add(a);</span><br><span class="line">set.add(b);</span><br><span class="line">set.add(c);</span><br><span class="line">set.add(d);</span><br><span class="line">set.add(e);</span><br><span class="line">set.add(f);</span><br><span class="line"></span><br><span class="line">a= <span class="string">&quot;abc&quot;</span>;</span><br><span class="line">b = &#123;</span><br><span class="line">    name:<span class="string">&quot;cc&quot;</span>,</span><br><span class="line">    age:<span class="number">30</span></span><br><span class="line">&#125;</span><br><span class="line">set.add(a);</span><br><span class="line">set.add(b);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(set);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20200117101516967.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDA3MzExNQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><strong>set方法</strong></p>
+<p>size属性: 返回集合的元素个数。（类似数组的长度length）<br>add(value)方法: 向集合中添加一个元素value。注意：如果向集合中添加一个已经存在的元素，不报错但是集合不会改变。<br>delete(value)方法: 从集合中删除元素value。<br>has(value)方法: 判断value是否在集合中，返回true或false.<br>clear()方法: 清空集合。<br>set应用场景<br>鉴于set存储值的不重复特性，经常被用来求数组去重，交集，并集，差集等操作。</p>
+<p>数组去重</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let arry &#x3D; [1, 2, 3, 4, 4,1,2,3,2];</span><br><span class="line">var mySet &#x3D; new Set(arry);</span><br><span class="line"> let newArry &#x3D; [...mySet]; &#x2F;&#x2F; [1, 2, 3, 4]</span><br></pre></td></tr></table></figure>
+
+<p>求并集，交集,差集。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//set求并集</span></span><br><span class="line"><span class="keyword">let</span> arryA= [<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],arryB = [<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>];</span><br><span class="line"><span class="keyword">let</span> setAB = <span class="keyword">new</span> <span class="built_in">Set</span>([...arryA,...arryB]);</span><br><span class="line"><span class="keyword">let</span> newArryAB = [...setAB];</span><br><span class="line"><span class="built_in">console</span>.log(newArryAB); <span class="comment">//[2,3,4,5,6,7,8]</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">//求交集</span></span><br><span class="line"> <span class="keyword">let</span> arryC= [<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],arryD = [<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>];</span><br><span class="line"> <span class="keyword">let</span> setC = <span class="keyword">new</span> <span class="built_in">Set</span>(arryC);</span><br><span class="line"> <span class="keyword">let</span> setD = <span class="keyword">new</span> <span class="built_in">Set</span>(arryD);</span><br><span class="line"> <span class="keyword">let</span> newArryC_D = arryA.filter(<span class="function"><span class="params">x</span>=&gt;</span>setD.has(x));</span><br><span class="line"> <span class="built_in">console</span>.log(newArryC_D); <span class="comment">//[3,4,5,6]</span></span><br><span class="line"> </span><br><span class="line"> <span class="comment">//求差集</span></span><br><span class="line"> <span class="keyword">let</span> newArryD_C = arryA.filter(<span class="function"><span class="params">x</span>=&gt;</span>!setD.has(x));</span><br><span class="line"> <span class="keyword">let</span> newArryD_D = arryB.filter(<span class="function"><span class="params">x</span>=&gt;</span>!setC.has(x));</span><br><span class="line"> <span class="keyword">let</span> newArryCD = [...newArryD_C,...newArryD_D];</span><br><span class="line"> <span class="built_in">console</span>.log(newArryCD); <span class="comment">//[2,7,8]</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="map"><a href="#map" class="headerlink" title="map"></a><strong>map</strong></h2><p>map定义及特征<br>Map 对象保存键值对。任何值(对象或者原始值) 都可以作为一个键或一个值。</p>
+<p>Map常用属性及增删改查方法:</p>
+<p>size: 属性，取出字典的长度<br>set(key, value)：方法，向字典中添加新元素<br>get(key)：方法，通过键查找特定的数值并返回<br>has(key)：方法，判断字典中是否存在键key<br>delete(key)：方法，通过键 key 从字典中移除对应的数据<br>clear()：方法，将这个字典中的所有元素删除<br>与Object的区别：</p>
+<p>一个 Object 的键只能是字符串或者 Symbols，但一个 Map 的键可以是任意值。<br>Map 中的键值是有序的（FIFO 原则），而添加到对象中的键则不是。<br>Map 的键值对个数可以从 size 属性获取，而 Object 的键值对个数只能手动计算。<br>Object 都有自己的原型，原型链上的键名有可能和你自己在对象上的设置的键名产生冲突，而map健不可重复，如果键名冲突则会覆盖对应的值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">let map &#x3D; new Map();</span><br><span class="line">    let s &#x3D; &#123;</span><br><span class="line">        name:&#39;cc&#39;,</span><br><span class="line">        job:&#39;programmer&#39;</span><br><span class="line">    &#125;</span><br><span class="line">    let m &#x3D;&#123;</span><br><span class="line">        dd:&#39;cdcdcd&#39;,</span><br><span class="line">        do:function(str)&#123;</span><br><span class="line">            console.log(str)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    map.set(s,m);</span><br><span class="line">    map.set(m,s);</span><br><span class="line">    map.set(0,s);</span><br><span class="line">    map.set(0,m);</span><br><span class="line">    console.log(map)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20200117152911903.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDA3MzExNQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><strong>map的遍历</strong></p>
+<p>for … of<br>forEach</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for(let [key,value] of map)&#123;</span><br><span class="line">       console.log(&quot;key:&quot;+JSON.stringify(key)+&quot;-------value:&quot;+JSON.stringify(value))</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"> map.forEach((value,key)&#x3D;&gt;&#123;</span><br><span class="line">     console.log(&quot;key:&quot;+JSON.stringify(key)+&quot;-------value:&quot;+JSON.stringify(value))</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>map与数组之间的转换</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let arryK &#x3D; [[1,2],[3,4],[5,6]];</span><br><span class="line"></span><br><span class="line">   let mapK &#x3D; new Map(arryK);</span><br><span class="line">   </span><br><span class="line">   let mapP &#x3D; Array.from(mapK);</span><br><span class="line">   </span><br><span class="line">   console.log(mapK);</span><br><span class="line">   console.log(mapP);</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20200117155845434.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDA3MzExNQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><strong>map的复制</strong></p>
+<p>let mapV= new Map(map);</p>
+<h2 id="WeakSet"><a href="#WeakSet" class="headerlink" title="WeakSet"></a>WeakSet</h2><p>和Set结构类似，也是不重复的值的集合，但WeakSet的成员只能是对象。</p>
+<p>WeakSet的API：add() //增 ；delete() //删； has() //是否存在</p>
+<p>注意：ws没有size属性，不可遍历。因为WeakSet的成员都是弱引用，随时可能消失，成员是不稳定的。</p>
+<p>WeakSet的用处：<br>（1）使用ws储存DOM节点，就不用担心节点从文档移除时，会引发内存泄漏（即在被移除的节点上绑定的click等事件）。<br>（2）下面代码保证了Foo的实例方法，只能在Foo的实例上调用。这里使用 WeakSet 的好处是，foos对实例的引用，不会被计入内存回收机制，所以删除实例的时候，不用考虑foos，也不会出现内存泄漏。</p>
+<h2 id="WeakMap"><a href="#WeakMap" class="headerlink" title="WeakMap"></a>WeakMap</h2><p>WeakMap与Map的区别:<br>WeakMap 对象是一组键值对的集合，其中的键是弱引用对象，而值可以是任意。</p>
+<p>注意，WeakMap 弱引用的只是键名，而不是键值。键值依然是正常引用。</p>
+<p>WeakMap 中，每个键对自己所引用对象的引用都是弱引用，在没有其他引用和该键引用同一对象，这个对象将会被垃圾回收（相应的key则变成无效的），所以，WeakMap 的 key 是不可枚举的。</p>
+<p>用WeakMap来实现私有属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">   &#x2F;&#x2F;weakmap</span><br><span class="line">   </span><br><span class="line">   let Person &#x3D; (function() &#123;</span><br><span class="line">   </span><br><span class="line">       let privateData &#x3D; new WeakMap();</span><br><span class="line">   </span><br><span class="line">       function Person(name,age) &#123;</span><br><span class="line">           privateData.set(this,  &#123;name:name,age:age&#125;);</span><br><span class="line">       &#125;</span><br><span class="line">   </span><br><span class="line">       Person.prototype.getName &#x3D; function() &#123;</span><br><span class="line">           return privateData.get(this).name;</span><br><span class="line">       &#125;;</span><br><span class="line">       Person.prototype.getAge &#x3D; function() &#123;</span><br><span class="line">           return privateData.get(this).age;</span><br><span class="line">       &#125;;</span><br><span class="line">       Person.prototype.setName &#x3D; function(name) &#123;</span><br><span class="line">           let obj &#x3D; privateData.get(this)</span><br><span class="line">           obj.name &#x3D; name;</span><br><span class="line">       &#125;;</span><br><span class="line">       Person.prototype.setAge &#x3D; function(age) &#123;</span><br><span class="line">           let obj &#x3D; privateData.get(this)</span><br><span class="line">           obj.age &#x3D; age;</span><br><span class="line">       &#125;;</span><br><span class="line">   </span><br><span class="line">       return Person;</span><br><span class="line">   &#125;());</span><br><span class="line"></span><br><span class="line">let ssf &#x3D; new Person(&quot;zhang&quot;,19);</span><br><span class="line">   console.log(ssf.getName());</span><br><span class="line">   console.log(ssf.getAge());</span><br><span class="line">   ssf.setName(&quot;liu&quot;);</span><br><span class="line">   ssf.setAge(90)</span><br><span class="line">   console.log(ssf.getName());</span><br><span class="line">   console.log(ssf.getAge());</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20200117165109683.png" alt="在这里插入图片描述"></p>
 
       
 
@@ -279,7 +321,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://buildccy.github.io/2021/04/20/BFC%E5%B8%83%E5%B1%80/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://buildccy.github.io/2021/06/06/%E4%BB%8B%E7%BB%8D%E4%B8%8B%20Set%E3%80%81Map%E3%80%81WeakSet%20%E5%92%8C%20WeakMap%20%E7%9A%84%E5%8C%BA%E5%88%AB/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -293,18 +335,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/04/22/transition%E5%92%8Canimation%E7%9A%84%E5%8C%BA%E5%88%AB/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/06/17/JS%E4%B8%AD%E7%9A%84%E6%8C%89%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          transition和animation的区别
+          位运算符
         
       </div>
     </a>
   
   
-    <a href="/2021/04/20/CSS3%E5%8A%A8%E7%94%BB%E5%92%8CJS%E5%8A%A8%E7%94%BB%E7%9A%84%E6%AF%94%E8%BE%83/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CSS3动画与JS动画的比较</div>
+    <a href="/2021/06/03/%E5%AE%8F%E4%BB%BB%E5%8A%A1%E5%92%8C%E5%BE%AE%E4%BB%BB%E5%8A%A1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>
   

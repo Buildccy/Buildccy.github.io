@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://Buildccy.github.io">
-  <title>CSS3动画与JS动画的比较 | Buildccy的个人博客</title>
+  <title>位运算符 | Buildccy的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#CSS3动画与JS动画的比较 JS动画优点： js动画控制能力强，可以在动画播放过程中对动画进行精细控制，开始、暂停、终止、取消都是可以做到的 动画效果比css3动画丰富，比如曲线运动，冲击闪烁，视差滚动效果，只有js动画才能完成 js动画大多数情况下没有兼容性问题，而css3动画有兼容性问题">
+  <meta name="description" content="JS中的按位运算符大多数语言都提供了按位运算符，按位运算符在c,c++等语言中运用广泛，而在JS，AS等脚本语言中则没有太多的应用例子，有时候，适当的使用按位运算符会取得很好的效果。下面根据自己的认知简单的谈一下js中的位操作使用（同样适用于其他语言），如果有错误，欢迎指正。 按位运算符是把操作数看作一系列单独的位，而不是一个数字值。所以在这之前，不得不提到什么是“位”：数值或字符在内存内都是被存">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS3动画与JS动画的比较">
-<meta property="og:url" content="https://buildccy.github.io/2021/04/20/CSS3%E5%8A%A8%E7%94%BB%E5%92%8CJS%E5%8A%A8%E7%94%BB%E7%9A%84%E6%AF%94%E8%BE%83/index.html">
+<meta property="og:title" content="位运算符">
+<meta property="og:url" content="https://buildccy.github.io/2021/06/17/JS%E4%B8%AD%E7%9A%84%E6%8C%89%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6/index.html">
 <meta property="og:site_name" content="Buildccy的个人博客">
-<meta property="og:description" content="#CSS3动画与JS动画的比较 JS动画优点： js动画控制能力强，可以在动画播放过程中对动画进行精细控制，开始、暂停、终止、取消都是可以做到的 动画效果比css3动画丰富，比如曲线运动，冲击闪烁，视差滚动效果，只有js动画才能完成 js动画大多数情况下没有兼容性问题，而css3动画有兼容性问题">
+<meta property="og:description" content="JS中的按位运算符大多数语言都提供了按位运算符，按位运算符在c,c++等语言中运用广泛，而在JS，AS等脚本语言中则没有太多的应用例子，有时候，适当的使用按位运算符会取得很好的效果。下面根据自己的认知简单的谈一下js中的位操作使用（同样适用于其他语言），如果有错误，欢迎指正。 按位运算符是把操作数看作一系列单独的位，而不是一个数字值。所以在这之前，不得不提到什么是“位”：数值或字符在内存内都是被存">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-04-20T12:46:29.000Z">
-<meta property="article:modified_time" content="2021-06-03T15:48:41.515Z">
+<meta property="article:published_time" content="2021-06-17T14:04:29.000Z">
+<meta property="article:modified_time" content="2021-06-17T14:11:18.855Z">
 <meta property="article:author" content="Buildccy">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
@@ -155,71 +155,72 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-CSS3动画和JS动画的比较" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-JS中的按位运算符" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      CSS3动画与JS动画的比较
+      位运算符
     </h1>
   
 
         
-        <a href="/2021/04/20/CSS3%E5%8A%A8%E7%94%BB%E5%92%8CJS%E5%8A%A8%E7%94%BB%E7%9A%84%E6%AF%94%E8%BE%83/" class="archive-article-date">
-  	<time datetime="2021-04-20T12:46:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-20</time>
+        <a href="/2021/06/17/JS%E4%B8%AD%E7%9A%84%E6%8C%89%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6/" class="archive-article-date">
+  	<time datetime="2021-06-17T14:04:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#CSS3动画与JS动画的比较</p>
-<h3 id="JS动画"><a href="#JS动画" class="headerlink" title="JS动画"></a>JS动画</h3><h4 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h4><ol>
-<li>js动画控制能力强，可以在动画播放过程中对动画进行精细控制，开始、暂停、终止、取消都是可以做到的</li>
-<li>动画效果比css3动画丰富，比如曲线运动，冲击闪烁，视差滚动效果，只有js动画才能完成</li>
-<li>js动画大多数情况下没有兼容性问题，而css3动画有兼容性问题</li>
-</ol>
+        <h1 id="JS中的按位运算符"><a href="#JS中的按位运算符" class="headerlink" title="JS中的按位运算符"></a>JS中的按位运算符</h1><p>大多数语言都提供了按位运算符，按位运算符在c,c++等语言中运用广泛，而在JS，AS等脚本语言中则没有太多的应用例子，有时候，适当的使用按位运算符会取得很好的效果。<br>下面根据自己的认知简单的谈一下js中的位操作使用（同样适用于其他语言），如果有错误，欢迎指正。</p>
+<p>按位运算符是把操作数看作一系列单独的位，而不是一个数字值。所以在这之前，不得不提到什么是“位”：<br>数值或字符在内存内都是被存储为0和1的序列，每个0和1被称之为1个位,比如说10进制数据2在计算机内被存储为 0 0 0 0 0 0 1 0，当我们将内存内的位值改变之后，这个值代表的意义也就变了，比如把2前移动一位， 现在存储单元里面变成了0 0 0 0 0 1 0 0,这个值表示的是十进制的4,这也就是按位操作符的运算原理。</p>
+<p><strong>按位运算符有6个<br>“&amp;”按位与<br>“|”按位或<br>“^”按位异或<br>“~”取反<br>“&gt;&gt;”右移<br>“&lt;&lt;”左移</strong></p>
 <span id="more"></span>
-<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ol>
-<li>js动画的复杂度高于css3</li>
-<li>js在动画浏览器的主线程中执行，而主线程还有其他javaScript脚本，样式计算、布局、绘制任务等，对其干扰可能出现阻塞从而出现丢帧的情况</li>
-<li>js动画往往需要频繁操作DOM的css属性来实现视觉上的动画效果，这个时候浏览器要不停地执行重绘和重排，这对于性能的消耗是很大的，尤其是在分配给浏览器的内存没那么宽裕的移动端。</li>
-</ol>
-<h3 id="CSS3动画"><a href="#CSS3动画" class="headerlink" title="CSS3动画"></a>CSS3动画</h3><h4 id="优点：-1"><a href="#优点：-1" class="headerlink" title="优点："></a>优点：</h4><ol>
-<li><p>部分情况下浏览器可以对动画进行优化，为什么说部分情况下呢，因为是有条件的：</p>
-<ul>
-<li><p>在Chromium基础上的浏览器中</p>
-</li>
-<li><p>同时CSS动画不触发layout或paint，在CSS动画或JS动画触发了paint或layout时，需要main thread进行Layer树的重计算，这时CSS动画或JS动画都会阻塞后续操作。</p>
-<blockquote>
-<p>在主线程中，维护了一棵Layer树（LayerTreeHost），管理了TiledLayer，在compositor thread，维护了同样一颗LayerTreeHostImpl，管理了LayerImpl，这两棵树的内容是拷贝关系。因此可以彼此不干扰，当Javascript在main thread操作LayerTreeHost的同时，compositor thread可以用LayerTreeHostImpl做渲染。当Javascript繁忙导致主线程卡住时，合成到屏幕的过程也是流畅的。<br>为了实现防假死，鼠标键盘消息会被首先分发到compositor thread，然后再到main thread。这样，当main thread繁忙时，compositor thread还是能够响应一部分消息，例如，鼠标滚动时，加入main thread繁忙，compositor thread也会处理滚动消息，滚动已经被提交的页面部分（未被提交的部分将被刷白）。</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p>部分效果可以强制使用硬件加速 （通过 GPU 来提高动画性能）</p>
-</li>
-</ol>
-<h4 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h4><ol>
-<li>运行进程控制较弱，css3动画只能在某些场景下控制动画的暂停与继续，不能在特定的位置添加添加回调函数</li>
-<li>js在动画浏览器的主线程中执行，而主线程还有其他javaScript脚本，样式计算、布局、绘制任务等，对其干扰可能出现阻塞从而出现丢帧的情况</li>
-</ol>
-<h3 id="css动画比js动画流畅的前提"><a href="#css动画比js动画流畅的前提" class="headerlink" title="css动画比js动画流畅的前提"></a>css动画比js动画流畅的前提</h3><ul>
-<li>js在执行一些复杂的任务</li>
-<li>css动画比较少或者不触发pain和layout，即重绘和重排，例如通过改变如下属性生成的css动画<ul>
-<li>backface-visibility</li>
-<li>opacity</li>
-<li>perspective （设置元素视图）</li>
-<li>perspective-origin</li>
-<li>transfrom</li>
-</ul>
-</li>
-<li>部分属性能够启动3D加速和GPU硬件加速，例如使用transform的translateZ进行3D变换时</li>
-<li>在Chromium基础上的浏览器中，这个貌似是内核做了优化，当css动画知识改变transfrom和opacity时，整个CSS动画得以在compositor thread完成（而JS动画则会在main thread执行),这样css动画渲染不会影响主线程。</li>
-</ul>
-<p>### 总结<br>回归到日常开发中，当有一个动画的需求时，首要考虑的肯定是能不能尽可能实现的问题。如果在CSS动画和JS动画都能实现的基础上才会要去根据上面总结的权衡哪个性能更好的问题。总之，并不一定css动画就比js动画好，还得看具体的需求和业务场景。</p>
+
+<p>1 &amp; 运算符<br>&amp;是二元运算符，它以特定的方式的方式组合操作数中对应的位 如果对应的位都为1，那么结果就是1， 如果任意一个位是0 则结果就是0<br>1 &amp; 3的结果为1<br>来看看它的怎么运行的：<br>1的二进制表示为 0 0 0 0 0 0 1<br>3的二进制表示为 0 0 0 0 0 1 1<br>根据 &amp; 的规则 得到的结果为 0 0 0 0 0 0 0 1,十进制表示就是1</p>
+<p>只要任何一位是0 &amp;运算的结果就是 0，所以可以用&amp;把某个变量不必要的位设为0, 比如某个变量的二进制表示为 0 1 0 0 1 0 0 1, 我想保留低4位，消除高4位 用 &amp; 0x0F就可以了（住：0x0F为16进制表示法，对应的二进制为 0 0 0 0 1 1 1 1），这个特性有个很重要的应用，在后面会提到。</p>
+<p>2 | 运算符<br>| 跟 &amp; 的区别在于 如果对应的位中任一个操作数为1 那么结果就是1<br>1 | 3 的结果为3</p>
+<p>3 ^ 运算符<br>^运算符跟 | 类似，但有一点不同的是 如果两个操作位都为1的话，结果产生0<br>0 1 0 0 0 0 0 1<br>0 1 0 1 1 0 1 0<br>产生 0 0 0 1 1 0 1 1<br>（注意与|的区别）<br>4 ~ 运算符<br>~是对位求反 1变0， 0变1</p>
+<p>5 移位运算符移位运算符把位按指定的值向左或向右移动<br>&lt;&lt; 向左移动 而 &gt;&gt; 向右移动，超过的位将丢失，而空出的位则补0</p>
+<p>如 0 1 0 0 0 0 0 0 0 0 0 0 0 1 1(十进制16387) 向左移动两位将变成<br>0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 （十进制12）<br>向右移动两位则是<br>0 0 0 1 0 0 0 0 0 0 0 0 0 0 0(十进制4096)<br>下面介绍一些具体的应用<br>前面提到2向前移动1位变成4 利用这个特性可以做乘法运算<br>2 &lt;&lt; 1 =4<br>3 &lt;&lt; 1 = 6<br>4 &lt;&lt; 1 = 8<br>同理 &gt;&gt; 则可以做除法运算</p>
+<p><em>任何小数 把它 &gt;&gt; 0可以取整<br>如3.14159 &gt;&gt; 0 = 3;</em></p>
+<p>^运算符有个神奇的特性<br>如以下代码</p>
+<script>
+var n1 = 3;
+var n2 = 4;
+n1 ^= n2;
+n2 ^= n1;
+n1 ^= n2;
+</script>
+
+<p>这样你会发现n1 = 4, n2=3，n1,n2在不使用任何中间变量的情况下交换了值，所有的整数都适用这种情况</p>
+<p>颜色的处理<br>我们知道一组16进制值可以表示一种rgb颜色<br>比如0xFF0000,其中 r=ff, g = 00, b = 00,3色组合就变成了红色<br>我们可以从颜色值提取出来红色，黄色，蓝色，或者把3色组合成一个rgb颜色<br>这在颜色的缓动中用处非常大</p>
+<p>首先color 0xFF0000的二进制表示为1111 1111 0000 0000<br>0000 0000<br>高8位是红色值，低8位是绿色值，中间的就是蓝色值了<br>很明显的，把color 右移16位那么就是红色值了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var color &#x3D; 0xFF0000;</span><br><span class="line">var r &#x3D; color &gt;&gt; 16;</span><br></pre></td></tr></table></figure>
+
+<p>绿色值（就是中8位）怎么获取呢<br>首先把color 右移动8位<br>变成了0000 0000 1111 1111 0000 0000，现在绿色值为低8位，我们只要把8位以前的位变成0那么就得到了绿色值，前面提到的 &amp;运算符，如果任何一位为0 那么结果就是0<br>所以我们把值 &amp; 0000 0000 0000 0000 1111 1111就得到了绿色值,那么<br>var g = color &gt;&gt; 8 &amp; 0xFF 即可得到了绿色值<br>蓝色值用同样的方法<br>var b = color &amp; 0xFF</p>
+<script>
+var color = 0xFF0000;
+var r = color >> 16;
+var g = color >> 8 & 0xFF;
+ var b = color & 0xFF;
+alert(r);
+alert(g);
+alert(b);
+</script>
+<p>0xFF0000的红色值应该是255，绿色与蓝色为0<br>如果是3种值如何组合成一个rgb颜色呢<br>r = 0000 0000 0000 0000 1111 1111(255)<br>g = 0000 0000 0000 0000 1111 1111(255)<br>b = 0000 0000 0000 0000 0000 0000(0)<br>首先 把g 左移8位<br>变成了0000 0000 1111 1111 0000 0000<br>然后与b进行 | 操作<br>|操作是如果对应的位中任一个操作数为1 那么结果就是1<br>那么变成了 0000 0000 1111 1111 0000 0000<br>同样的方法把r右移16位 再与刚才的值 | 操作 则组成了一个完整的rgb颜色（不包含透明度）</p>
+<p>下面做个验证<br>我们知道当r=255, g = 255, b = 255 的时候，组成的颜色是黑色，即0x000000;</p>
+<script>
+var r = 255;
+var g = 255;
+var b = 255;
+var color = r << 16 & g << 8 & b;
+alert(color.toString(16))
+</script>
+<p>正确的输出了000000;<br>可以看出在颜色构造中使用位运算符很有空间。<br>在这里提一下图片的区别，可以理解一下颜色中位的使用。<br>png8,png32的区别<br>png8是8位保存一个象素，其中一位0或1表示透明或不透明，所以不能表示半透明，剩下的7位表示128种索引色。 png24或32在很多软件有引有点乱，<br>严格说png24是RGB各占8位表示三种颜色，带不了通道，如果再加8位的通道，就是png32,正因为有8位通道，所以可以半透明，文件也就变大了。</p>
 
       
 
@@ -310,7 +311,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://buildccy.github.io/2021/04/20/CSS3%E5%8A%A8%E7%94%BB%E5%92%8CJS%E5%8A%A8%E7%94%BB%E7%9A%84%E6%AF%94%E8%BE%83/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://buildccy.github.io/2021/06/17/JS%E4%B8%AD%E7%9A%84%E6%8C%89%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -324,18 +325,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/04/20/BFC%E5%B8%83%E5%B1%80/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/06/17/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5-%E6%89%8B%E6%92%95hexo%EF%BC%88%E7%AC%AC%E4%B8%89%E6%9C%9F%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          BFC布局
+          项目实践-手撕hexo（第三期）
         
       </div>
     </a>
   
   
-    <a href="/2021/04/20/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2021/06/06/%E4%BB%8B%E7%BB%8D%E4%B8%8B%20Set%E3%80%81Map%E3%80%81WeakSet%20%E5%92%8C%20WeakMap%20%E7%9A%84%E5%8C%BA%E5%88%AB/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">set\map\WeakSet\WeakMap</div>
       <i class="icon-circle-right"></i>
     </a>
   
